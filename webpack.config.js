@@ -1,5 +1,5 @@
 const path = require('path');
-
+const webpack = require('webpack');
 module.exports = {
   entry: ['./src/index.js'],
   output: {
@@ -28,15 +28,15 @@ module.exports = {
           'sass-loader'
         ]
       },
-      {
-        test: /\.html$/,
-        loader: 'html-loader?attrs[]=video:src'
-      },
-      {
-        test: /\.mp4$/,
-        loader: 'url?limit=10000&mimetype=video/mp4'
-      },
-      ,
+      // {
+      //   test: /\.html$/,
+      //   loader: 'html-loader?attrs[]=video:src'
+      // },
+      // {
+      //   test: /\.mp4$/,
+      //   loader: 'url?limit=10000&mimetype=video/mp4'
+      // },
+      // ,
       {
         test: /\.(jpg|png|svg)$/,
         loader: 'url-loader',

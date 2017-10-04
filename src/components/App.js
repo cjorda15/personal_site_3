@@ -3,6 +3,7 @@ import { Route, Link, Switch } from 'react-router-dom';
 import Main from './Main';
 import BurgerMenu from './BurgerMenu';
 import '../helper/navbar';
+import '../helper/icon-animation';
 
 const App = () => {
   return (

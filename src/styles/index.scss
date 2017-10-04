@@ -1,8 +1,14 @@
 @import 'variables';
 @import 'main';
-@import 'burger-menu.scss';
+@import 'burger-menu';
+@import 'initial-description';
 
 * {
   padding: 0px;
   margin: 0px;
+  box-sizing: border-box;
+}
+
+h6 {
+  font-family: 'Cabin', sans-serif;
 }

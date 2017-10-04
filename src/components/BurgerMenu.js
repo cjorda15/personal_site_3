@@ -26,29 +26,53 @@ class BurgerMenu extends Component {
   showMenu() {
     return (
       <div className="navbar-menu">
-        <NavLink className="nav-link" activeClassName="selected" to={'/'}>
-          home
-        </NavLink>
-        <NavLink className="nav-link" activeClassName="selected" to={'/about'}>
-          about
-        </NavLink>
-        <NavLink
-          className="nav-link"
-          activeClassName="selected"
-          to={'/projects'}
-        >
-          projects
-        </NavLink>
-        <NavLink className="nav-link" activeClassName="selected" to={'/resume'}>
-          resume
-        </NavLink>
-        <NavLink
-          className="nav-link"
-          activeClassName="selected"
-          to={'/contact'}
-        >
-          contact
-        </NavLink>
+        <div className="nav-links-wrapper">
+          <NavLink
+            className="nav-link"
+            onClick={e => {
+              this.handleClick(e);
+            }}
+            to={'/'}
+          >
+            home
+          </NavLink>
+          <NavLink
+            className="nav-link"
+            onClick={e => {
+              this.handleClick(e);
+            }}
+            to={'#about-1-background '}
+          >
+            about
+          </NavLink>
+          <NavLink
+            className="nav-link"
+            onClick={e => {
+              this.handleClick(e);
+            }}
+            to={'/projects'}
+          >
+            projects
+          </NavLink>
+          <NavLink
+            className="nav-link"
+            onClick={e => {
+              this.handleClick(e);
+            }}
+            to={'/resume'}
+          >
+            resume
+          </NavLink>
+          <NavLink
+            className="nav-link"
+            onClick={e => {
+              this.handleClick(e);
+            }}
+            to={'/contact'}
+          >
+            contact
+          </NavLink>
+        </div>
       </div>
     );
   }

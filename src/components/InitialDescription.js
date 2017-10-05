@@ -4,10 +4,12 @@ const InitialDescription = () => {
   return (
     <section className="initial-description-wrapper">
       <div id="about-1-background">
-        <i className="about-1-icons about-1-icon-1">&spades;</i>
-        <i className="about-1-icons about-1-icon-2">&hearts;</i>
-        <i className="about-1-icons about-1-icon-3">&clubs;</i>
-        <i className="about-1-icons about-1-icon-4">&diams;</i>
+        <div className="about-1-icons-wrapper">
+          <i className="about-1-icons about-1-icon-1">&spades;</i>
+          <i className="about-1-icons about-1-icon-2">&hearts;</i>
+          <i className="about-1-icons about-1-icon-3">&clubs;</i>
+          <i className="about-1-icons about-1-icon-4">&diams;</i>
+        </div>
       </div>
       <div
         id="about-2-background"

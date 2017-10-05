@@ -1,6 +1,7 @@
 .initial-description-wrapper {
   position: relative;
   display: flex;
+  top: 20px;
   width: 90%;
   margin: 0px auto;
   h6 {
@@ -11,19 +12,28 @@
     text-align: center;
     width: 100%;
   }
-  div {
-    position: relative;
-    height: 400px;
-    width: 50%;
-  }
   i {
-    font-size: 8em;
+    font-size: 5em;
   }
+}
+
+#about-1-background,
+#about-2-background {
+  position: relative;
+  height: 400px;
+  width: 50%;
+}
+
+.about-1-icons-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
 }
 
 #about-1-background {
   animation: colorchange 40s infinite;
   -webkit-animation: colorchange 40s infinite;
+  overflow: hidden;
 }
 
 #about-2-background {

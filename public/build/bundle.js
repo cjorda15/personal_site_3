@@ -36106,8 +36106,6 @@ var BurgerMenu = function (_Component) {
   }, {
     key: 'showMenu',
     value: function showMenu() {
-      var _this2 = this;
-
       return _react2.default.createElement(
         'div',
         { className: 'navbar-menu' },
@@ -36116,57 +36114,27 @@ var BurgerMenu = function (_Component) {
           { className: 'nav-links-wrapper' },
           _react2.default.createElement(
             _reactRouterDom.NavLink,
-            {
-              className: 'nav-link',
-              onClick: function onClick(e) {
-                _this2.handleClick(e);
-              },
-              to: '/'
-            },
+            { className: 'nav-link', to: '/' },
             'home'
           ),
           _react2.default.createElement(
             _reactRouterDom.NavLink,
-            {
-              className: 'nav-link',
-              onClick: function onClick(e) {
-                _this2.handleClick(e);
-              },
-              to: '#about-1-background '
-            },
+            { className: 'nav-link', to: '#about-1-background ' },
             'about'
           ),
           _react2.default.createElement(
             _reactRouterDom.NavLink,
-            {
-              className: 'nav-link',
-              onClick: function onClick(e) {
-                _this2.handleClick(e);
-              },
-              to: '/projects'
-            },
+            { className: 'nav-link', to: '/projects' },
             'projects'
           ),
           _react2.default.createElement(
             _reactRouterDom.NavLink,
-            {
-              className: 'nav-link',
-              onClick: function onClick(e) {
-                _this2.handleClick(e);
-              },
-              to: '/resume'
-            },
+            { className: 'nav-link', to: '/resume' },
             'resume'
           ),
           _react2.default.createElement(
             _reactRouterDom.NavLink,
-            {
-              className: 'nav-link',
-              onClick: function onClick(e) {
-                _this2.handleClick(e);
-              },
-              to: '/contact'
-            },
+            { className: 'nav-link', to: '/contact' },
             'contact'
           )
         )
@@ -36175,7 +36143,7 @@ var BurgerMenu = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
       return _react2.default.createElement(
         'nav',
@@ -36184,7 +36152,7 @@ var BurgerMenu = function (_Component) {
           'button',
           {
             onClick: function onClick(e) {
-              _this3.handleClick(e);
+              _this2.handleClick(e);
             },
             className: 'c-hamburger c-hamburger--htx'
           },
@@ -36250,21 +36218,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _jquery2.default)(document).ready(function () {
   var lastScrollTop = 0;
-  var current = 0;
+  var current = -10;
   (0, _jquery2.default)(window).scroll(function (event) {
     var st = (0, _jquery2.default)(this).scrollTop();
     if (st > lastScrollTop) {
-      if (!(current >= 85)) {
+      if (!(current >= 75)) {
         current += 1;
       }
-      // $('.about-1-icons').animate({ color: `black` });
-      (0, _jquery2.default)('.about-1-icons-wrapper').css({ left: current + '%' });
+      // $('.about-1-icons').css({ color: `black` });
+      (0, _jquery2.default)('.about-1-icons-wrapper').css({ left: current + '%', color: 'black' });
     } else {
-      if (!(current <= 0)) {
+      if (!(current <= -10)) {
         current -= 1;
       }
       // $('.about-1-icons').animate({ color: `red` });
-      (0, _jquery2.default)('.about-1-icons-wrapper').css({ left: current + '%' });
+      (0, _jquery2.default)('.about-1-icons-wrapper').css({ left: current + '%', color: 'red' });
     }
     lastScrollTop = st;
   });
@@ -36312,7 +36280,7 @@ exports = module.exports = __webpack_require__(87)(undefined);
 
 
 // module
-exports.push([module.i, ".video-wrapper {\n  bottom: 0;\n  left: 0;\n  position: relative;\n  top: 0;\n  width: 100%;\n  min-height: 720px; }\n\n#bgvid {\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100vw;\n  height: 125vh;\n  position: absolute;\n  top: 0;\n  left: 0; }\n\n.main-title {\n  color: #fff;\n  font-family: 'Playfair Display', serif;\n  top: 30vh;\n  margin: 10px;\n  text-align: center;\n  position: absolute;\n  width: 100%; }\n  .main-title h1 {\n    font-size: 3em; }\n  .main-title p {\n    font-size: 1em; }\n\n.main-contact-btn-wrapper {\n  position: absolute;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  top: 90vh;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 100%; }\n\n#scroll-to-about {\n  font-size: 50px;\n  color: #fff; }\n  #scroll-to-about:hover {\n    color: red;\n    transition: all 0.5s; }\n\n.navbar-menu {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background: #1a1a1a;\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  opacity: 0.9;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  z-index: 10; }\n\n.nav-links-wrapper {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  padding-top: 100px;\n  padding-bottom: 15px;\n  width: 100%;\n  height: 44px; }\n\n.nav-link {\n  text-shadow: black 2px 3px 2px;\n  max-height: 27px;\n  color: #fff;\n  text-decoration: none;\n  border-bottom: 2px solid #ace;\n  font-size: 24px;\n  width: 100px; }\n  .nav-link:hover {\n    border-bottom: 2px #fff solid;\n    color: #ace;\n    transition: all 0.5s; }\n\n.c-hamburger {\n  display: block;\n  position: fixed;\n  overflow: hidden;\n  margin: 0;\n  padding: 0;\n  width: 96px;\n  height: 96px;\n  font-size: 0;\n  text-indent: -9999px;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  box-shadow: none;\n  border-radius: none;\n  border: none;\n  cursor: pointer;\n  transition: background 0.3s;\n  z-index: 100; }\n\n.c-hamburger:focus {\n  outline: none; }\n\n.c-hamburger span {\n  display: block;\n  position: absolute;\n  top: 44px;\n  left: 18px;\n  right: 18px;\n  height: 8px;\n  background: white; }\n\n.c-hamburger span::before,\n.c-hamburger span::after {\n  position: absolute;\n  display: block;\n  left: 0;\n  width: 100%;\n  height: 8px;\n  background-color: #fff;\n  content: ''; }\n\n.c-hamburger span::before {\n  top: -20px; }\n\n.c-hamburger span::after {\n  bottom: -20px; }\n\n.c-hamburger--htx {\n  background-color: #ff3264; }\n\n.c-hamburger--htx span {\n  transition: background 0s 0.3s; }\n\n.c-hamburger--htx span::before,\n.c-hamburger--htx span::after {\n  transition-duration: 0.3s, 0.3s;\n  transition-delay: 0.3s, 0s; }\n\n.c-hamburger--htx span::before {\n  transition-property: top, -webkit-transform;\n  transition-property: top, transform;\n  transition-property: top, transform, -webkit-transform; }\n\n.c-hamburger--htx span::after {\n  transition-property: bottom, -webkit-transform;\n  transition-property: bottom, transform;\n  transition-property: bottom, transform, -webkit-transform; }\n\n.c-hamburger--htx.is-active {\n  background-color: #cb0032; }\n\n.c-hamburger--htx.is-active span {\n  background: none; }\n\n.c-hamburger--htx.is-active span::before {\n  top: 0;\n  -webkit-transform: rotate(45deg);\n          transform: rotate(45deg); }\n\n.c-hamburger--htx.is-active span::after {\n  bottom: 0;\n  -webkit-transform: rotate(-45deg);\n          transform: rotate(-45deg); }\n\n.c-hamburger--htx.is-active span::before,\n.c-hamburger--htx.is-active span::after {\n  transition-delay: 0s, 0.3s; }\n\n.initial-description-wrapper {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  top: 20px;\n  width: 90%;\n  margin: 0px auto; }\n  .initial-description-wrapper h6 {\n    color: #fff;\n    font-size: 2em;\n    position: absolute;\n    top: 30%;\n    text-align: center;\n    width: 100%; }\n  .initial-description-wrapper i {\n    font-size: 5em; }\n\n#about-1-background,\n#about-2-background {\n  position: relative;\n  height: 400px;\n  width: 50%; }\n\n.about-1-icons-wrapper {\n  position: absolute;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column; }\n\n#about-1-background {\n  animation: colorchange 40s infinite;\n  -webkit-animation: colorchange 40s infinite;\n  overflow: hidden; }\n\n#about-2-background {\n  background-position: center;\n  background-repeat: no-repeat;\n  top: 50px; }\n\n@-webkit-keyframes colorchange {\n  0% {\n    background: red; }\n  25% {\n    background: orange; }\n  50% {\n    background: blue; }\n  75% {\n    background: green; }\n  100% {\n    background: red; } }\n\n@keyframes colorchange {\n  0% {\n    background: red; }\n  25% {\n    background: orange; }\n  50% {\n    background: blue; }\n  75% {\n    background: green; }\n  100% {\n    background: red; } }\n\n@-webkit-keyframes {\n  0% {\n    background: red; }\n  25% {\n    background: yellow; }\n  50% {\n    background: blue; }\n  75% {\n    background: green; }\n  100% {\n    background: red; } }\n\n* {\n  padding: 0px;\n  margin: 0px;\n  box-sizing: border-box; }\n\nhtml {\n  background: #1a1a1a; }\n\nh6 {\n  font-family: 'Cabin', sans-serif; }\n", ""]);
+exports.push([module.i, ".video-wrapper {\n  bottom: 0;\n  left: 0;\n  position: relative;\n  top: 0;\n  width: 100%;\n  min-height: 720px; }\n\n#bgvid {\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100vw;\n  height: 125vh;\n  position: absolute;\n  top: 0;\n  left: 0; }\n\n.main-title {\n  color: #fff;\n  font-family: 'Playfair Display', serif;\n  top: 30vh;\n  margin: 10px;\n  text-align: center;\n  position: absolute;\n  width: 100%; }\n  .main-title h1 {\n    font-size: 3em; }\n  .main-title p {\n    font-size: 1em; }\n\n.main-contact-btn-wrapper {\n  position: absolute;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  top: 90vh;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 100%; }\n\n#scroll-to-about {\n  font-size: 50px;\n  color: #fff; }\n  #scroll-to-about:hover {\n    color: red;\n    transition: all 0.5s; }\n\n.navbar-menu {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background: #1a1a1a;\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  opacity: 0.9;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  z-index: 10; }\n\n.nav-links-wrapper {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  padding-top: 100px;\n  padding-bottom: 15px;\n  width: 100%;\n  height: 44px; }\n\n.nav-link {\n  text-shadow: black 2px 3px 2px;\n  max-height: 27px;\n  color: #fff;\n  text-decoration: none;\n  border-bottom: 2px solid #ace;\n  font-size: 24px;\n  width: 100px; }\n  .nav-link:hover {\n    border-bottom: 2px #fff solid;\n    color: #ace;\n    transition: all 0.5s; }\n\n.c-hamburger {\n  display: block;\n  position: fixed;\n  overflow: hidden;\n  margin: 0;\n  padding: 0;\n  width: 96px;\n  height: 96px;\n  font-size: 0;\n  text-indent: -9999px;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  box-shadow: none;\n  border-radius: none;\n  border: none;\n  cursor: pointer;\n  transition: background 0.3s;\n  z-index: 100; }\n\n.c-hamburger:focus {\n  outline: none; }\n\n.c-hamburger span {\n  display: block;\n  position: absolute;\n  top: 44px;\n  left: 18px;\n  right: 18px;\n  height: 8px;\n  background: white; }\n\n.c-hamburger span::before,\n.c-hamburger span::after {\n  position: absolute;\n  display: block;\n  left: 0;\n  width: 100%;\n  height: 8px;\n  background-color: #fff;\n  content: ''; }\n\n.c-hamburger span::before {\n  top: -20px; }\n\n.c-hamburger span::after {\n  bottom: -20px; }\n\n.c-hamburger--htx {\n  background-color: #ff3264; }\n\n.c-hamburger--htx span {\n  transition: background 0s 0.3s; }\n\n.c-hamburger--htx span::before,\n.c-hamburger--htx span::after {\n  transition-duration: 0.3s, 0.3s;\n  transition-delay: 0.3s, 0s; }\n\n.c-hamburger--htx span::before {\n  transition-property: top, -webkit-transform;\n  transition-property: top, transform;\n  transition-property: top, transform, -webkit-transform; }\n\n.c-hamburger--htx span::after {\n  transition-property: bottom, -webkit-transform;\n  transition-property: bottom, transform;\n  transition-property: bottom, transform, -webkit-transform; }\n\n.c-hamburger--htx.is-active {\n  background-color: #cb0032; }\n\n.c-hamburger--htx.is-active span {\n  background: none; }\n\n.c-hamburger--htx.is-active span::before {\n  top: 0;\n  -webkit-transform: rotate(45deg);\n          transform: rotate(45deg); }\n\n.c-hamburger--htx.is-active span::after {\n  bottom: 0;\n  -webkit-transform: rotate(-45deg);\n          transform: rotate(-45deg); }\n\n.c-hamburger--htx.is-active span::before,\n.c-hamburger--htx.is-active span::after {\n  transition-delay: 0s, 0.3s; }\n\n.initial-description-wrapper {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  top: 20px;\n  width: 90%;\n  margin: 0px auto; }\n  .initial-description-wrapper h6 {\n    color: #fff;\n    font-size: 2em;\n    position: absolute;\n    top: 30%;\n    text-align: center;\n    width: 100%; }\n  .initial-description-wrapper i {\n    font-size: 5em; }\n\n#about-1-background,\n#about-2-background {\n  position: relative;\n  height: 400px;\n  width: 50%; }\n\n.about-1-icons-wrapper {\n  position: absolute;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column; }\n\n#about-1-background {\n  animation: colorchange 20s infinite;\n  -webkit-animation: colorchange 20s infinite;\n  overflow: hidden; }\n\n#about-2-background {\n  background-position: center;\n  background-repeat: no-repeat;\n  top: 50px; }\n\n@-webkit-keyframes colorchange {\n  0% {\n    background: red; }\n  25% {\n    background: orange; }\n  50% {\n    background: blue; }\n  75% {\n    background: green; }\n  100% {\n    background: red; } }\n\n@keyframes colorchange {\n  0% {\n    background: red; }\n  25% {\n    background: orange; }\n  50% {\n    background: blue; }\n  75% {\n    background: green; }\n  100% {\n    background: red; } }\n\n@-webkit-keyframes {\n  0% {\n    background: red; }\n  25% {\n    background: yellow; }\n  50% {\n    background: blue; }\n  75% {\n    background: green; }\n  100% {\n    background: red; } }\n\n* {\n  padding: 0px;\n  margin: 0px;\n  box-sizing: border-box; }\n\nhtml {\n  background: #1a1a1a; }\n\nh6 {\n  font-family: 'Cabin', sans-serif; }\n", ""]);
 
 // exports
 

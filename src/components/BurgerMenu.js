@@ -27,49 +27,19 @@ class BurgerMenu extends Component {
     return (
       <div className="navbar-menu">
         <div className="nav-links-wrapper">
-          <NavLink
-            className="nav-link"
-            onClick={e => {
-              this.handleClick(e);
-            }}
-            to={'/'}
-          >
+          <NavLink className="nav-link" to={'/'}>
             home
           </NavLink>
-          <NavLink
-            className="nav-link"
-            onClick={e => {
-              this.handleClick(e);
-            }}
-            to={'#about-1-background '}
-          >
+          <NavLink className="nav-link" to={'#about-1-background '}>
             about
           </NavLink>
-          <NavLink
-            className="nav-link"
-            onClick={e => {
-              this.handleClick(e);
-            }}
-            to={'/projects'}
-          >
+          <NavLink className="nav-link" to={'/projects'}>
             projects
           </NavLink>
-          <NavLink
-            className="nav-link"
-            onClick={e => {
-              this.handleClick(e);
-            }}
-            to={'/resume'}
-          >
+          <NavLink className="nav-link" to={'/resume'}>
             resume
           </NavLink>
-          <NavLink
-            className="nav-link"
-            onClick={e => {
-              this.handleClick(e);
-            }}
-            to={'/contact'}
-          >
+          <NavLink className="nav-link" to={'/contact'}>
             contact
           </NavLink>
         </div>

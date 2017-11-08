@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 $(document).ready(() => {
   $('#scroll-to-about').click(function() {
-    $('#scroll-to-about').hide();
+    // $('#scroll-to-about').hide();
     $('html, body').animate(
       {
         scrollTop: $('#about-1-background').offset().top

@@ -1,6 +1,6 @@
 .navbar-menu {
   align-items: center;
-  background: #1a1a1a;
+  background: $black;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -22,16 +22,17 @@
 }
 
 .nav-link {
-  text-shadow: black 2px 3px 2px;
-  max-height: 27px;
+  border-bottom: 2px solid $red;
   color: #fff;
-  text-decoration: none;
-  border-bottom: 2px solid #ace;
   font-size: 24px;
+  font-family: $fun-font;
+  text-decoration: none;
+  max-height: 27px;
+  text-shadow: black 2px 3px 2px;
   width: 100px;
   &:hover {
-    border-bottom: 2px #fff solid;
-    color: #ace;
+    border-bottom: 2px $white solid;
+    color: $red;
     transition: all 0.5s;
   }
 }
@@ -89,7 +90,7 @@
 }
 
 .c-hamburger--htx {
-  background-color: #ff3264;
+  background-color: $violet;
 }
 
 .c-hamburger--htx span {
@@ -111,7 +112,7 @@
 }
 
 .c-hamburger--htx.is-active {
-  background-color: #cb0032;
+  background-color: $violet;
 }
 
 .c-hamburger--htx.is-active span {

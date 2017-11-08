@@ -1,4 +1,4 @@
-@import 'variables';
+@import './utilities/index.scss';
 @import 'main';
 @import 'burger-menu';
 @import 'initial-description';
@@ -14,5 +14,5 @@ html {
 }
 
 h6 {
-  font-family: 'Cabin', sans-serif;
+  font-family: $regular-font;
 }

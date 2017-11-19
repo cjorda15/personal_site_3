@@ -8,7 +8,7 @@ $(document).ready(() => {
     var st = $(this).scrollTop();
     if (st > lastScrollTop) {
       if (!(current >= 75)) {
-        current += 1;
+        current += 0.75;
         $('.about-1-icons-wrapper').css({ top: `${current}%` });
       }
     }

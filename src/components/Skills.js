@@ -8,50 +8,72 @@ const Skills = () => {
       </h6>
       <section className="skills-wrapper">
         <div className="skills" id="skill-1">
-          <div>
+          <div className="skill-card">
             <div
+              className="style-icon"
               style={{ backgroundImage: `url(icons/html-5-icon.png)` }}
-            />HTML
+            />
+            <div>HTML</div>
           </div>
-          <div id="css-skill">
-            <div style={{ backgroundImage: `url(icons/css-icon.png)` }} />CSS
-          </div>
-          <div id="js-skill">
+          <div className="skill-card">
             <div
+              className="style-icon"
+              style={{ backgroundImage: `url(icons/css-icon.png)` }}
+            />
+            <div>CSS3</div>
+          </div>
+          <div className="skill-card">
+            <div
+              className="style-icon"
               style={{ backgroundImage: `url(icons/javascript-icon.png)` }}
-            />Javascript
+            />
+            <div>ES6</div>
           </div>
         </div>
         <div className="skills" id="skill-2">
-          <div id="react-skill">
+          <div className="skill-card">
             <div
+              className="style-icon"
               style={{ backgroundImage: `url(icons/react-icon.png)` }}
-            />REACT
+            />
+            <div>React</div>
           </div>
-          <div id="db-skill">
+          <div className="skill-card">
             <div
-              style={{ backgroundImage: `url(icons/database-icon.png)` }}
-            />DATABASE
+              className="style-icon"
+              style={{ backgroundImage: `url(icons/wordpress-icon.png)` }}
+            />
+            <div>WORDPRESS</div>
           </div>
-          <div id="webpack-skill">
+          <div className="skill-card">
             <div
+              className="style-icon"
               style={{ backgroundImage: `url(icons/webpack-icon.png)` }}
-            />WEBPACK
+            />
+            <div>WEBPACK</div>
           </div>
         </div>
         <div className="skills" id="skill-3">
-          <div id="seo-skill">
-            <div style={{ backgroundImage: `url(icons/seo-icon.png)` }} />SEO
-          </div>
-          <div id="mobile-skill">
+          <div className="skill-card">
             <div
+              className="style-icon"
+              style={{ backgroundImage: `url(icons/seo-icon.png)` }}
+            />
+            <div>SEO</div>
+          </div>
+          <div className="skill-card">
+            <div
+              className="style-icon"
               style={{ backgroundImage: `url(icons/mobile-icon.png)` }}
-            />MOBILE
+            />
+            <div>RESPONSIVE</div>
           </div>
-          <div id="wordpress-skill">
+          <div className="skill-card">
             <div
-              style={{ backgroundImage: `url(icons/wordpress-icon.png)` }}
-            />WORDPRESS
+              className="style-icon"
+              style={{ backgroundImage: `url(icons/database-icon.png)` }}
+            />
+            <div>DATABASE</div>
           </div>
         </div>
       </section>

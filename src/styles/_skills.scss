@@ -10,16 +10,25 @@
 }
 
 .skills {
-  height: 300px;
   margin: 20px 0px;
-  div {
-    div {
-      background-size: contain;
-      background-repeat: no-repeat;
-      height: 50px;
-      width: 50px;
-    }
-  }
+}
+
+.style-icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+}
+
+.skill-card {
+  align-items: center;
+  display: flex;
+  font-size: 1.3em;
+  flex-direction: column;
+  font-family: $regular-font;
+  height: 150px;
+  justify-content: space-around;
+  width: 200px;
 }
 
 .in-view {
@@ -36,6 +45,10 @@
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   backface-visibility: hidden;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 80%;
 }
 

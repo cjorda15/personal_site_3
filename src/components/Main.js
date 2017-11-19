@@ -4,7 +4,7 @@ import Skills from './Skills';
 
 const Main = () => {
   return (
-    <section className="main-wrapper">
+    <section className="main-wrapper" id="home">
       <div className="video-wrapper">
         <video playsInline autoPlay muted loop id="bgvid" src="nightlife.mov" />
       </div>

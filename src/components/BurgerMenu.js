@@ -20,7 +20,7 @@ class BurgerMenu extends Component {
   }
 
   handleClick(e) {
-    e.preventDefault();
+    // e.preventDefault();
     this.setState({ open: !this.state.open });
     $('.c-hamburger').toggleClass('is-active');
   }
@@ -32,21 +32,22 @@ class BurgerMenu extends Component {
           <a
             onClick={e => {
               this.handleClick(e);
+              this.jump(e);
             }}
             className="nav-link"
-            to={'/'}
+            href="#home"
           >
             home
           </a>
-          <NavLink
+          <a
             onClick={e => {
               this.handleClick(e);
             }}
             className="nav-link"
-            to={'#about-1-background '}
+            to="#skills"
           >
-            about
-          </NavLink>
+            skills
+          </a>
           <NavLink
             onClick={e => {
               this.handleClick(e);
@@ -76,6 +77,26 @@ class BurgerMenu extends Component {
           </NavLink>
         </div>
       </div>
+    );
+  }
+
+  jump(e) {
+    console.log($(this));
+    if (e) {
+      var target = $(this)
+        .parents('.side-nav-link')
+        .prevObject[0].getAttribute('href');
+    } else {
+      var target = location.hash;
+    }
+    if (target.indexOf('http') == 0) return;
+    //  e.preventDefault();
+    $('html,body').animate(
+      {
+        scrollTop: $(target).offset().top
+      },
+      1500,
+      function() {}
     );
   }
 

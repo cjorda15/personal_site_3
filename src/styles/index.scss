@@ -2,6 +2,7 @@
 @import 'main';
 @import 'burger-menu';
 @import 'initial-description';
+@import 'skills';
 
 * {
   padding: 0px;
@@ -15,4 +16,56 @@ html {
 
 h6 {
   font-family: $regular-font;
+}
+
+.section-headline {
+  color: $white;
+  font-size: 3em;
+  font-family: $fun-font;
+  text-align: center;
+  text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff;
+}
+
+.section-headline span:nth-of-type(1) {
+  animation: red-light 5s linear infinite;
+}
+
+@keyframes red-light {
+  0%,
+  12%,
+  18.999%,
+  23%,
+  31.999%,
+  37%,
+  44.999%,
+  46%,
+  49.999%,
+  51%,
+  58.999%,
+  61%,
+  68.999%,
+  71%,
+  85.999%,
+  96%,
+  100% {
+    opacity: 0.99;
+    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed;
+  }
+  19%,
+  22.99%,
+  32%,
+  36.999%,
+  45%,
+  45.999%,
+  50%,
+  50.99%,
+  59%,
+  60.999%,
+  69%,
+  70.999%,
+  86%,
+  95.999% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
 }

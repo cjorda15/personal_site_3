@@ -1,5 +1,6 @@
 import React from 'react';
 import InitialDescription from './InitialDescription';
+import Skills from './Skills';
 
 const Main = () => {
   return (
@@ -37,6 +38,7 @@ const Main = () => {
         </div>
       </div>
       <InitialDescription />
+      <Skills />
     </section>
   );
 };

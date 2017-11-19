@@ -5,8 +5,10 @@
   width: 90%;
   margin: 0px auto;
   h6 {
+    background-color: rgba(160, 155, 155, 0.3);
     color: #fff;
     font-size: 2em;
+    padding: 15px;
     position: absolute;
     top: 30%;
     text-align: center;
@@ -32,6 +34,7 @@
 
 #about-1-background {
   animation: colorchange 20s infinite;
+  border-radius: 20px;
   -webkit-animation: colorchange 20s infinite;
   overflow: hidden;
 }
@@ -39,41 +42,42 @@
 #about-2-background {
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 20px;
   top: 50px;
 }
 
 @keyframes colorchange {
   0% {
-    background: red;
+    background: $straw;
   }
   25% {
-    background: orange;
+    background: $asparagus;
   }
   50% {
-    background: blue;
+    background: $light-sea-green;
   }
   75% {
-    background: green;
+    background: $middle-red;
   }
   100% {
-    background: red;
+    background: $straw;
   }
 }
 
-@-webkit-keyframes {
+@-webkit-keyframes colorchange {
   0% {
-    background: red;
+    background: $straw;
   }
   25% {
-    background: yellow;
+    background: $asparagus;
   }
   50% {
-    background: blue;
+    background: $light-sea-green;
   }
   75% {
-    background: green;
+    background: $middle-red;
   }
   100% {
-    background: red;
+    background: $straw;
   }
 }

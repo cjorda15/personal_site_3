@@ -4,6 +4,7 @@ import Main from './Main';
 import BurgerMenu from './BurgerMenu';
 import '../helper/navbar';
 import '../helper/icon-animation';
+import '../helper/scroll';
 
 const App = () => {
   return (

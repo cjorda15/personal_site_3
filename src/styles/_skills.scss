@@ -1,0 +1,55 @@
+.skills-container {
+  margin-top: 170px;
+}
+
+.skills-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 240px auto 0px;
+}
+
+.skills {
+  height: 300px;
+  margin: 20px 0px;
+  div {
+    div {
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 50px;
+      width: 50px;
+    }
+  }
+}
+
+.in-view {
+  border-radius: 15px;
+  -moz-transition: all 700ms ease-out;
+  -webkit-transition: all 700ms ease-out;
+  -o-transition: all 700ms ease-out;
+  transition: all 700ms ease-out;
+  -moz-transform: translate3d(0px, -200px, 0px);
+  -webkit-transform: translate3d(0px, -200px, 0px);
+  -o-transform: translate(0px, -200px);
+  -ms-transform: translate(0px, -200px);
+  transform: translate3d(0px, -200, 0px);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  width: 80%;
+}
+
+#html-skill {
+  width: 46px;
+  height: 44px;
+}
+
+#skill-1 {
+  background-color: $powder;
+}
+#skill-2 {
+  background-color: $peach;
+}
+#skill-3 {
+  background-color: $warm;
+}

@@ -13,7 +13,7 @@ const Skills = () => {
               className="style-icon"
               style={{ backgroundImage: `url(icons/html-5-icon.png)` }}
             />
-            <div>HTML</div>
+            <div>HTML5</div>
           </div>
           <div className="skill-card">
             <div
@@ -71,7 +71,30 @@ const Skills = () => {
           <div className="skill-card">
             <div
               className="style-icon"
-              style={{ backgroundImage: `url(icons/database-icon.png)` }}
+              style={{ backgroundImage: `url(icons/test-icon.png)` }}
+            />
+            <div>TESTING</div>
+          </div>
+        </div>
+        <div className="skills" id="skill-4">
+          <div className="skill-card">
+            <div
+              className="style-icon"
+              style={{ backgroundImage: `url(icons/node-icon.png)` }}
+            />
+            <div>NODE</div>
+          </div>
+          <div className="skill-card">
+            <div
+              className="style-icon"
+              style={{ backgroundImage: `url(icons/sass-icon.png)` }}
+            />
+            <div>SASS</div>
+          </div>
+          <div className="skill-card">
+            <div
+              className="style-icon"
+              style={{ backgroundImage: `url(icons/DATABASE-icon.png)` }}
             />
             <div>DATABASE</div>
           </div>

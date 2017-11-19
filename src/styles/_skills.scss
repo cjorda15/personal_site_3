@@ -10,14 +10,20 @@
 }
 
 .skills {
+  align-items: center;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-around;
+  max-width: 600px;
   margin: 20px 0px;
+  width: 80%;
 }
 
 .style-icon {
   background-size: contain;
   background-repeat: no-repeat;
-  height: 50px;
-  width: 50px;
+  height: 75px;
+  width: 75px;
 }
 
 .skill-card {
@@ -27,12 +33,11 @@
   flex-direction: column;
   font-family: $regular-font;
   height: 150px;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 200px;
 }
 
 .in-view {
-  border-radius: 15px;
   -moz-transition: all 700ms ease-out;
   -webkit-transition: all 700ms ease-out;
   -o-transition: all 700ms ease-out;
@@ -45,11 +50,6 @@
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   backface-visibility: hidden;
-  max-width: 600px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 80%;
 }
 
 #html-skill {
@@ -65,4 +65,14 @@
 }
 #skill-3 {
   background-color: $warm;
+}
+
+#skill-4 {
+  background-color: $light-sea-green;
+}
+
+@media (max-width: 520px) {
+  .skills {
+    flex-direction: column;
+  }
 }

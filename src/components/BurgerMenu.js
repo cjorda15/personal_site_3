@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import Scroll from 'react-scroll';
+import $ from 'jquery';
 
 class BurgerMenu extends Component {
   constructor() {
@@ -21,25 +22,56 @@ class BurgerMenu extends Component {
   handleClick(e) {
     e.preventDefault();
     this.setState({ open: !this.state.open });
+    $('.c-hamburger').toggleClass('is-active');
   }
 
   showMenu() {
     return (
       <div className="navbar-menu">
         <div className="nav-links-wrapper">
-          <NavLink className="nav-link" to={'/'}>
+          <a
+            onClick={e => {
+              this.handleClick(e);
+            }}
+            className="nav-link"
+            to={'/'}
+          >
             home
-          </NavLink>
-          <NavLink className="nav-link" to={'#about-1-background '}>
+          </a>
+          <NavLink
+            onClick={e => {
+              this.handleClick(e);
+            }}
+            className="nav-link"
+            to={'#about-1-background '}
+          >
             about
           </NavLink>
-          <NavLink className="nav-link" to={'/projects'}>
+          <NavLink
+            onClick={e => {
+              this.handleClick(e);
+            }}
+            className="nav-link"
+            to={'/projects'}
+          >
             projects
           </NavLink>
-          <NavLink className="nav-link" to={'/resume'}>
+          <NavLink
+            onClick={e => {
+              this.handleClick(e);
+            }}
+            className="nav-link"
+            to={'/resume'}
+          >
             resume
           </NavLink>
-          <NavLink className="nav-link" to={'/contact'}>
+          <NavLink
+            onClick={e => {
+              this.handleClick(e);
+            }}
+            className="nav-link"
+            to={'/contact'}
+          >
             contact
           </NavLink>
         </div>

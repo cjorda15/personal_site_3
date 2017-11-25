@@ -5,16 +5,18 @@ const InitialDescription = () => {
     <section className="initial-description-wrapper">
       <div id="about-1-background">
         <div className="about-1-icons-wrapper">
-          <i className="about-1-icons about-1-icon-1">&spades;</i>
-          <i className="about-1-icons about-1-icon-2">&hearts;</i>
-          <i className="about-1-icons about-1-icon-3">&clubs;</i>
-          <i className="about-1-icons about-1-icon-4">&diams;</i>
+          <div
+            className="about-1-icons"
+            style={{ backgroundImage: 'url(icons/death_star.svg)' }}
+          >
+            <span className="death-star-not-active" />
+          </div>
         </div>
       </div>
       <div
         id="about-2-background"
         style={{
-          backgroundImage: "url('office.jpg')"
+          backgroundImage: "url('me.jpg')"
         }}
       />
       <h6>

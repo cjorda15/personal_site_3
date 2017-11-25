@@ -13,9 +13,32 @@
     text-align: center;
     width: 100%;
   }
-  i {
-    font-size: 5em;
+}
+
+.about-1-icons {
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  height: 100px;
+  width: 100px;
+  span {
+    background-color: green;
+    height: 3px;
+    position: absolute;
+    top: 29%;
+    right: 0px;
+    width: 20px;
   }
+}
+
+.death-star-not-active {
+  display: none;
+}
+
+.death-star-active {
+  display: inline-block;
+  animation: 5s deathBeam;
+  opacity: 0;
 }
 
 #about-1-background,
@@ -32,51 +55,41 @@
 }
 
 #about-1-background {
-  // animation: colorchange 20s infinite;
   border-radius: 20px;
-  // -webkit-animation: colorchange 20s infinite;
   overflow: hidden;
 }
 
 #about-2-background {
-  background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  background-position-x: center;
   border-radius: 20px;
   top: 50px;
 }
 
-@keyframes colorchange {
+@keyframes deathBeam {
   0% {
-    background: $straw;
-  }
-  25% {
+    opacity: 1;
     background: $asparagus;
-  }
-  50% {
-    background: $light-sea-green;
-  }
-  75% {
-    background: $middle-red;
+    width: 20px;
   }
   100% {
-    background: $straw;
+    background: $light-green;
+    width: 300px;
+    right: -100vw;
   }
 }
 
-@-webkit-keyframes colorchange {
+@-webkit-keyframes deathBeam {
   0% {
-    background: $straw;
-  }
-  25% {
+    opacity: 1;
     background: $asparagus;
-  }
-  50% {
-    background: $light-sea-green;
-  }
-  75% {
-    background: $middle-red;
+    width: 20px;
   }
   100% {
-    background: $straw;
+    background: $light-green;
+    width: 300px;
+    right: -100vw;
   }
 }

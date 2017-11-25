@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <section className="main-wrapper" id="home">
       <div className="video-wrapper">
-        <video playsInline autoPlay muted loop id="bgvid" src="nightlife.mov" />
+        <video playsInline autoPlay muted loop id="bgvid" src="nightlife.mp4" />
       </div>
       <div className="main-title-wrapper">
         <h1 className="intro-title">

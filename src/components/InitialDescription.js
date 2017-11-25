@@ -4,6 +4,11 @@ const InitialDescription = () => {
   return (
     <section className="initial-description-wrapper">
       <div id="about-1-background">
+        <h6>
+          I am a creative front-end developer who enjoys designing and
+          developing UI/UX web experiences with a focus on usability and
+          responsive web design
+        </h6>
         <div className="about-1-icons-wrapper">
           <div
             className="about-1-icons"
@@ -19,11 +24,6 @@ const InitialDescription = () => {
           backgroundImage: "url('me.jpg')"
         }}
       />
-      <h6>
-        I am a creative front-end developer who enjoys designing and developing
-        UI/UX web experiences with a focus on usability and responsive web
-        design
-      </h6>
     </section>
   );
 };

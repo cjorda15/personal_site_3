@@ -1,22 +1,10 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import Scroll from 'react-scroll';
 import $ from 'jquery';
 
 class BurgerMenu extends Component {
   constructor() {
     super();
     this.state = { open: false };
-  }
-
-  scrollAfterSearch(input) {
-    setTimeout(() => {
-      return Scroll.scroller.scrollTo(input, {
-        duration: 1000,
-        delay: 70,
-        smooth: true
-      });
-    }, 100);
   }
 
   handleClick(e) {
@@ -48,7 +36,7 @@ class BurgerMenu extends Component {
           >
             skills
           </a>
-          <NavLink
+          <a
             onClick={e => {
               this.handleClick(e);
             }}
@@ -56,8 +44,8 @@ class BurgerMenu extends Component {
             to={'/projects'}
           >
             projects
-          </NavLink>
-          <NavLink
+          </a>
+          <a
             onClick={e => {
               this.handleClick(e);
             }}
@@ -65,8 +53,8 @@ class BurgerMenu extends Component {
             to={'/resume'}
           >
             resume
-          </NavLink>
-          <NavLink
+          </a>
+          <a
             onClick={e => {
               this.handleClick(e);
             }}
@@ -74,7 +62,7 @@ class BurgerMenu extends Component {
             to={'/contact'}
           >
             contact
-          </NavLink>
+          </a>
         </div>
       </div>
     );

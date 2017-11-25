@@ -1,0 +1,42 @@
+.projects {
+  position: relative;
+  height: 400px;
+  margin: 0px auto;
+  max-width: 600px;
+  min-width: 320px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.project {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.not-active-project {
+  top: -500px;
+}
+
+.active-project {
+  top: 0px;
+}
+
+.projects-btn {
+  background: #fff;
+  border-radius: 100%;
+  font-size: 30px;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+}
+
+.projects-btn:nth-of-type(1) {
+  left: 10px;
+}
+.projects-btn:nth-of-type(2) {
+  right: 10px;
+}

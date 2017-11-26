@@ -6,8 +6,7 @@
   min-width: 320px;
   overflow: hidden;
   width: 90%;
-  border-top: 20px dotted $gold;
-  border-bottom: 20px dotted $gold;
+  border-top: 20px double $gold;
 }
 
 .project {
@@ -49,27 +48,20 @@
   }
 }
 
-.project-content {
-  position: absolute;
-  transition: all 0.5s;
-  height: 100%;
-  width: 100%;
-}
-
-.project-content-inactive {
-  left: -500px;
-  z-index: -1;
-}
-
-.project-content-active {
-  left: 0px;
-}
+// .project-content {
+//   position: absolute;
+//   transition: all 0.5s;
+//   height: 100%;
+//   width: 100%;
+// }
 
 .project-info {
+  display: flex;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: space-between;
 }
 
 .project-title {
-  background: rgba(0, 0, 0, 0.6);
   color: #fff;
   padding: 5px;
   font-size: 1.5em;
@@ -78,29 +70,16 @@
 
 .project-links {
   display: flex;
-  flex-direction: column;
-  position: absolute;
-  right: 0px;
+  // position: absolute;
+  // right: 0px;
   a {
-    position: relative;
-    color: $white;
-    transition: all 1s;
+    transition: all 0.5s ease-in-out;
     &:hover {
-      color: $red;
-    }
-    div {
-      background: rgba(0, 0, 0, 0.75);
-      border-radius: 4px;
-      bottom: 0%;
-      position: absolute;
-      font-family: $regular-font;
-      font-size: 1.3em;
-      left: -20%;
-      padding: 3px;
+      transform: scale(1.1);
     }
   }
   img {
-    height: 75px;
+    height: 60px;
     width: 75px;
   }
 }

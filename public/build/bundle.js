@@ -471,6 +471,99 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+
+
+
+var emptyObject = {};
+
+if (process.env.NODE_ENV !== 'production') {
+  Object.freeze(emptyObject);
+}
+
+module.exports = emptyObject;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+
+
+
+var emptyFunction = __webpack_require__(2);
+
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+
+var warning = emptyFunction;
+
+if (process.env.NODE_ENV !== 'production') {
+  var printWarning = function printWarning(format) {
+    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    var argIndex = 0;
+    var message = 'Warning: ' + format.replace(/%s/g, function () {
+      return args[argIndex++];
+    });
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+
+  warning = function warning(condition, format) {
+    if (format === undefined) {
+      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
+    }
+
+    if (format.indexOf('Failed Composite propType: ') === 0) {
+      return; // Ignore CompositeComponent proptype check.
+    }
+
+    if (!condition) {
+      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+        args[_key2 - 2] = arguments[_key2];
+      }
+
+      printWarning.apply(undefined, [format].concat(args));
+    }
+  };
+}
+
+module.exports = warning;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
  * jQuery JavaScript Library v3.2.1
  * https://jquery.com/
@@ -10728,99 +10821,6 @@ return jQuery;
 
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-
-
-var emptyObject = {};
-
-if (process.env.NODE_ENV !== 'production') {
-  Object.freeze(emptyObject);
-}
-
-module.exports = emptyObject;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-
-
-var emptyFunction = __webpack_require__(2);
-
-/**
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
- */
-
-var warning = emptyFunction;
-
-if (process.env.NODE_ENV !== 'production') {
-  var printWarning = function printWarning(format) {
-    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    var argIndex = 0;
-    var message = 'Warning: ' + format.replace(/%s/g, function () {
-      return args[argIndex++];
-    });
-    if (typeof console !== 'undefined') {
-      console.error(message);
-    }
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
-
-  warning = function warning(condition, format) {
-    if (format === undefined) {
-      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
-    }
-
-    if (format.indexOf('Failed Composite propType: ') === 0) {
-      return; // Ignore CompositeComponent proptype check.
-    }
-
-    if (!condition) {
-      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
-        args[_key2 - 2] = arguments[_key2];
-      }
-
-      printWarning.apply(undefined, [format].concat(args));
-    }
-  };
-}
-
-module.exports = warning;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10836,7 +10836,7 @@ module.exports = warning;
 
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(3);
-  var warning = __webpack_require__(7);
+  var warning = __webpack_require__(6);
   var ReactPropTypesSecret = __webpack_require__(9);
   var loggedTypeFailures = {};
 }
@@ -11402,7 +11402,7 @@ _react2.default.createElement(_App2.default, null), document.getElementById('roo
  This source code is licensed under the MIT license found in the
  LICENSE file in the root directory of this source tree.
 */
-var f=__webpack_require__(4),p=__webpack_require__(6);__webpack_require__(3);var r=__webpack_require__(2);
+var f=__webpack_require__(4),p=__webpack_require__(5);__webpack_require__(3);var r=__webpack_require__(2);
 function t(a){for(var b=arguments.length-1,d="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,e=0;e<b;e++)d+="\x26args[]\x3d"+encodeURIComponent(arguments[e+1]);b=Error(d+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var u={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function v(a,b,d){this.props=a;this.context=b;this.refs=p;this.updater=d||u}v.prototype.isReactComponent={};v.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?t("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};v.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function w(a,b,d){this.props=a;this.context=b;this.refs=p;this.updater=d||u}function x(){}x.prototype=v.prototype;var y=w.prototype=new x;y.constructor=w;f(y,v.prototype);y.isPureReactComponent=!0;function z(a,b,d){this.props=a;this.context=b;this.refs=p;this.updater=d||u}var A=z.prototype=new x;A.constructor=z;f(A,v.prototype);A.unstable_isAsyncReactComponent=!0;A.render=function(){return this.props.children};
@@ -11440,8 +11440,8 @@ if (process.env.NODE_ENV !== "production") {
 'use strict';
 
 var objectAssign$1 = __webpack_require__(4);
-var require$$0 = __webpack_require__(7);
-var emptyObject = __webpack_require__(6);
+var require$$0 = __webpack_require__(6);
+var emptyObject = __webpack_require__(5);
 var invariant = __webpack_require__(3);
 var emptyFunction = __webpack_require__(2);
 var checkPropTypes = __webpack_require__(8);
@@ -13185,7 +13185,7 @@ if (process.env.NODE_ENV === 'production') {
  LICENSE file in the root directory of this source tree.
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(1);__webpack_require__(3);var l=__webpack_require__(10),n=__webpack_require__(4),ba=__webpack_require__(11),ca=__webpack_require__(2),da=__webpack_require__(6),ea=__webpack_require__(12),fa=__webpack_require__(13),ha=__webpack_require__(14),ia=__webpack_require__(15);
+var aa=__webpack_require__(1);__webpack_require__(3);var l=__webpack_require__(10),n=__webpack_require__(4),ba=__webpack_require__(11),ca=__webpack_require__(2),da=__webpack_require__(5),ea=__webpack_require__(12),fa=__webpack_require__(13),ha=__webpack_require__(14),ia=__webpack_require__(15);
 function w(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:w("227");
 function ja(a){switch(a){case "svg":return"http://www.w3.org/2000/svg";case "math":return"http://www.w3.org/1998/Math/MathML";default:return"http://www.w3.org/1999/xhtml"}}
 var ka={Namespaces:{html:"http://www.w3.org/1999/xhtml",mathml:"http://www.w3.org/1998/Math/MathML",svg:"http://www.w3.org/2000/svg"},getIntrinsicNamespace:ja,getChildNamespace:function(a,b){return null==a||"http://www.w3.org/1999/xhtml"===a?ja(b):"http://www.w3.org/2000/svg"===a&&"foreignObject"===b?"http://www.w3.org/1999/xhtml":a}},la=null,oa={};
@@ -13515,13 +13515,13 @@ var invariant = __webpack_require__(3);
 var ExecutionEnvironment = __webpack_require__(10);
 var _assign = __webpack_require__(4);
 var EventListener = __webpack_require__(11);
-var require$$0 = __webpack_require__(7);
+var require$$0 = __webpack_require__(6);
 var hyphenateStyleName = __webpack_require__(27);
 var emptyFunction = __webpack_require__(2);
 var camelizeStyleName = __webpack_require__(29);
 var performanceNow = __webpack_require__(31);
 var propTypes = __webpack_require__(33);
-var emptyObject = __webpack_require__(6);
+var emptyObject = __webpack_require__(5);
 var checkPropTypes = __webpack_require__(8);
 var shallowEqual = __webpack_require__(12);
 var containsNode = __webpack_require__(13);
@@ -30988,7 +30988,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 var emptyFunction = __webpack_require__(2);
 var invariant = __webpack_require__(3);
-var warning = __webpack_require__(7);
+var warning = __webpack_require__(6);
 var assign = __webpack_require__(4);
 
 var ReactPropTypesSecret = __webpack_require__(9);
@@ -32814,7 +32814,7 @@ var _Project = __webpack_require__(48);
 
 var _Project2 = _interopRequireDefault(_Project);
 
-var _jquery = __webpack_require__(5);
+var _jquery = __webpack_require__(7);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -32968,7 +32968,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _jquery = __webpack_require__(5);
+var _jquery = __webpack_require__(7);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -32990,15 +32990,8 @@ var Project = function (_Component) {
   }
 
   _createClass(Project, [{
-    key: 'handleClick',
-    value: function handleClick() {
-      (0, _jquery2.default)('.project-content').toggleClass('project-content-inactive').toggleClass('project-content-active');
-    }
-  }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       return _react2.default.createElement(
         'div',
         {
@@ -33007,31 +33000,7 @@ var Project = function (_Component) {
         },
         _react2.default.createElement(
           'div',
-          { className: 'project-content project-content-inactive' },
-          _react2.default.createElement(
-            'h6',
-            { className: 'project-title' },
-            this.props.info.title
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            this.props.info.summary
-          ),
-          _react2.default.createElement(
-            'p',
-            {
-              onClick: function onClick() {
-                _this2.handleClick();
-              },
-              className: 'toggleButton'
-            },
-            'x summary'
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'project-content project-content-active' },
+          { className: 'project-content' },
           _react2.default.createElement(
             'div',
             { className: 'project-info' },
@@ -33046,33 +33015,13 @@ var Project = function (_Component) {
               _react2.default.createElement(
                 'a',
                 { href: this.props.info.liveLink },
-                _react2.default.createElement(
-                  'div',
-                  null,
-                  '@'
-                ),
                 _react2.default.createElement('img', { src: 'icons/screen.svg' })
               ),
               _react2.default.createElement(
                 'a',
                 { href: this.props.info.codeSrcLink },
-                _react2.default.createElement(
-                  'div',
-                  null,
-                  'code'
-                ),
                 _react2.default.createElement('img', { src: 'icons/code.svg' })
               )
-            ),
-            _react2.default.createElement(
-              'p',
-              {
-                onClick: function onClick() {
-                  _this2.handleClick();
-                },
-                className: 'toggleMenu'
-              },
-              '\u2190 summary'
             )
           )
         )
@@ -33095,7 +33044,7 @@ exports.default = Project;
 "use strict";
 
 
-var _jquery = __webpack_require__(5);
+var _jquery = __webpack_require__(7);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -33145,7 +33094,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 "use strict";
 
 
-var _jquery = __webpack_require__(5);
+var _jquery = __webpack_require__(7);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -33176,7 +33125,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 "use strict";
 
 
-var _jquery = __webpack_require__(5);
+var _jquery = __webpack_require__(7);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -33249,7 +33198,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Abe
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Monoton);", ""]);
 
 // module
-exports.push([module.i, ".video-wrapper {\n  bottom: 0;\n  left: 0;\n  position: relative;\n  top: 0;\n  width: 100%;\n  min-height: 720px; }\n\n#bgvid {\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100vw;\n  height: 125vh;\n  position: absolute;\n  top: 0;\n  left: 0; }\n\n.main-title-wrapper {\n  color: #fff;\n  font-family: 'Monoton', cursive;\n  top: 100px;\n  margin: 10px;\n  text-align: center;\n  position: absolute;\n  width: 100%; }\n\n.intro-title {\n  color: #fff;\n  font-size: 4em;\n  position: relative; }\n\n#intro-flash {\n  animation: flash 3s;\n  -webkit-animation: flash 3s;\n  background-color: #fff;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  height: 2px;\n  margin: 0px auto;\n  width: 0px;\n  z-index: 10; }\n\n.main-contact-btn-wrapper {\n  position: absolute;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  top: 90vh;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 100%; }\n\n#scroll-to-about {\n  font-size: 50px;\n  color: #fff; }\n  #scroll-to-about:hover {\n    color: #ff0000;\n    transition: all 0.5s; }\n\n@keyframes flash {\n  0% {\n    max-width: 600px;\n    width: 90%; }\n  90% {\n    background-color: #1a1a1a; }\n  100% {\n    width: 0px; } }\n\n@-webkit-keyframes flash {\n  0% {\n    max-width: 600px;\n    width: 90%; }\n  100% {\n    width: 0px; } }\n\n.intro-title {\n  color: #fff;\n  text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff; }\n\n.intro-title span:nth-of-type(3) {\n  -webkit-animation: lower 11s linear infinite;\n          animation: lower 11s linear infinite; }\n\n.intro-title span:nth-of-type(1) {\n  -webkit-animation: lower 11s linear infinite;\n          animation: lower 11s linear infinite; }\n\n.intro-title span:nth-of-type(7) {\n  -webkit-animation: upper 14s linear infinite;\n          animation: upper 14s linear infinite; }\n\n.intro-title span:nth-of-type(5) {\n  -webkit-animation: upper 7s linear infinite;\n          animation: upper 7s linear infinite; }\n\n.intro-title span:nth-of-type(1) {\n  -webkit-animation: lower 3s linear infinite;\n          animation: lower 3s linear infinite; }\n\n.intro-title span:nth-of-type(4) {\n  -webkit-animation: lower 6s linear infinite;\n          animation: lower 6s linear infinite; }\n\n.intro-title span:nth-of-type(9) {\n  -webkit-animation: lower 10s linear infinite;\n          animation: lower 10s linear infinite; }\n\n.intro-title span:nth-of-type(2) {\n  -webkit-animation: upper 10s linear infinite;\n          animation: upper 10s linear infinite; }\n\n.intro-title span:nth-of-type(3) {\n  -webkit-animation: upper 9s linear infinite;\n          animation: upper 9s linear infinite; }\n\n.intro-title span:nth-of-type(2) {\n  text-shadow: none;\n  opacity: 0.4; }\n\n@-webkit-keyframes upper {\n  0%,\n  19.999%,\n  22%,\n  62.999%,\n  64%,\n  64.999%,\n  70%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff; }\n  20%,\n  21.999%,\n  63%,\n  63.999%,\n  65%,\n  69.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@keyframes upper {\n  0%,\n  19.999%,\n  22%,\n  62.999%,\n  64%,\n  64.999%,\n  70%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff; }\n  20%,\n  21.999%,\n  63%,\n  63.999%,\n  65%,\n  69.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@-webkit-keyframes lower {\n  0%,\n  12%,\n  18.999%,\n  23%,\n  31.999%,\n  37%,\n  44.999%,\n  46%,\n  49.999%,\n  51%,\n  58.999%,\n  61%,\n  68.999%,\n  71%,\n  85.999%,\n  96%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed; }\n  19%,\n  22.99%,\n  32%,\n  36.999%,\n  45%,\n  45.999%,\n  50%,\n  50.99%,\n  59%,\n  60.999%,\n  69%,\n  70.999%,\n  86%,\n  95.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@keyframes lower {\n  0%,\n  12%,\n  18.999%,\n  23%,\n  31.999%,\n  37%,\n  44.999%,\n  46%,\n  49.999%,\n  51%,\n  58.999%,\n  61%,\n  68.999%,\n  71%,\n  85.999%,\n  96%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed; }\n  19%,\n  22.99%,\n  32%,\n  36.999%,\n  45%,\n  45.999%,\n  50%,\n  50.99%,\n  59%,\n  60.999%,\n  69%,\n  70.999%,\n  86%,\n  95.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@media (max-width: 600px) {\n  .intro-title {\n    font-size: 2em; } }\n\n.initial-description-wrapper {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  top: 20px;\n  width: 90%;\n  margin: 0px auto; }\n  .initial-description-wrapper h6 {\n    color: #fff;\n    font-size: 2em;\n    top: 30%;\n    text-align: center;\n    width: 100%; }\n\n.about-1-icons {\n  background-repeat: no-repeat;\n  background-size: contain;\n  position: relative;\n  height: 100px;\n  width: 100px; }\n  .about-1-icons span {\n    background-color: green;\n    height: 3px;\n    position: absolute;\n    top: 29%;\n    right: 0px;\n    width: 20px; }\n\n.death-star-not-active {\n  display: none; }\n\n.death-star-active {\n  display: inline-block;\n  -webkit-animation: 5s deathBeam;\n          animation: 5s deathBeam;\n  opacity: 0; }\n\n#about-1-background,\n#about-2-background {\n  position: relative;\n  height: 600px;\n  width: 50%; }\n\n.about-1-icons-wrapper {\n  position: absolute;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column; }\n\n#about-1-background {\n  border-radius: 20px; }\n\n#about-2-background {\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position-y: center;\n  background-position-x: center;\n  border-radius: 20px;\n  top: 50px; }\n\n@keyframes deathBeam {\n  0% {\n    opacity: 1;\n    background: #88ab75;\n    width: 20px; }\n  100% {\n    background: #50ff00;\n    width: 300px;\n    right: -100vw; } }\n\n@-webkit-keyframes deathBeam {\n  0% {\n    opacity: 1;\n    background: #88ab75;\n    width: 20px; }\n  100% {\n    background: #50ff00;\n    width: 300px;\n    right: -100vw; } }\n\n.skills-container {\n  margin-top: 170px; }\n\n.skills-wrapper {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin: 240px auto 0px; }\n\n.skills {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border-radius: 15px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  max-width: 600px;\n  margin: 20px 0px;\n  width: 80%; }\n\n.style-icon {\n  background-size: contain;\n  background-repeat: no-repeat;\n  height: 75px;\n  width: 75px; }\n\n.skill-card {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 1.3em;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  font-family: \"Abel\", sans-serif;\n  height: 150px;\n  -webkit-box-pack: space-evenly;\n      -ms-flex-pack: space-evenly;\n          justify-content: space-evenly;\n  width: 200px; }\n\n.in-view {\n  transition: all 700ms ease-out;\n  -webkit-transform: translate3d(0px, -200px, 0px);\n  transform: translate3d(0px, -200, 0px);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden; }\n\n#html-skill {\n  width: 46px;\n  height: 44px; }\n\n#skill-1 {\n  background-color: #bfd8d2; }\n\n#skill-2 {\n  background-color: #fedcd2; }\n\n#skill-3 {\n  background-color: #df744a; }\n\n#skill-4 {\n  background-color: #2d93ad; }\n\n@media (max-width: 520px) {\n  .skills {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; } }\n\n.projects {\n  position: relative;\n  height: 500px;\n  margin: 0px auto;\n  max-width: 1000px;\n  min-width: 320px;\n  overflow: hidden;\n  width: 90%;\n  border-top: 20px dotted #fed631;\n  border-bottom: 20px dotted #fed631; }\n\n.project {\n  position: absolute;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n  height: 100%;\n  transition: all 1s;\n  width: 100%; }\n\n.not-active-project {\n  top: -500px; }\n\n.active-project {\n  top: 0px; }\n\n.projects-btn {\n  background-color: rgba(0, 0, 0, 0.4);\n  border: 1px solid #fff;\n  bottom: 5%;\n  border-radius: 100%;\n  color: #fff;\n  font-size: 20px;\n  padding: 20px;\n  position: absolute;\n  transition: all 0.5s;\n  z-index: 5; }\n  .projects-btn:hover {\n    background-color: #fff;\n    border-color: #1a1a1a;\n    color: #1a1a1a; }\n  .projects-btn:active {\n    background-color: #fff; }\n\n.project-content {\n  position: absolute;\n  transition: all 0.5s;\n  height: 100%;\n  width: 100%; }\n\n.project-content-inactive {\n  left: -500px;\n  z-index: -1; }\n\n.project-content-active {\n  left: 0px; }\n\n.project-title {\n  background: rgba(0, 0, 0, 0.6);\n  color: #fff;\n  padding: 5px;\n  font-size: 1.5em;\n  text-align: center; }\n\n.project-links {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  position: absolute;\n  right: 0px; }\n  .project-links a {\n    position: relative;\n    color: #fff;\n    transition: all 1s; }\n    .project-links a:hover {\n      color: #ff0000; }\n    .project-links a div {\n      background: rgba(0, 0, 0, 0.75);\n      border-radius: 4px;\n      bottom: 0%;\n      position: absolute;\n      font-family: \"Abel\", sans-serif;\n      font-size: 1.3em;\n      left: -20%;\n      padding: 3px; }\n  .project-links img {\n    height: 75px;\n    width: 75px; }\n\n.projects-btn:nth-of-type(1) {\n  left: 10px; }\n\n.projects-btn:nth-of-type(2) {\n  right: 10px; }\n\n* {\n  padding: 0px;\n  margin: 0px;\n  box-sizing: border-box; }\n\nhtml {\n  background: #1a1a1a; }\n\nh6 {\n  font-family: \"Abel\", sans-serif; }\n\n.section-headline {\n  color: #fff;\n  font-size: 3em;\n  font-family: \"Monoton\", cursive;\n  text-align: center;\n  text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff; }\n\n.section-headline span:nth-of-type(1) {\n  -webkit-animation: red-light 5s linear infinite;\n          animation: red-light 5s linear infinite; }\n\n@-webkit-keyframes red-light {\n  0%,\n  12%,\n  18.999%,\n  23%,\n  31.999%,\n  37%,\n  44.999%,\n  46%,\n  49.999%,\n  51%,\n  58.999%,\n  61%,\n  68.999%,\n  71%,\n  85.999%,\n  96%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed; }\n  19%,\n  22.99%,\n  32%,\n  36.999%,\n  45%,\n  45.999%,\n  50%,\n  50.99%,\n  59%,\n  60.999%,\n  69%,\n  70.999%,\n  86%,\n  95.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@keyframes red-light {\n  0%,\n  12%,\n  18.999%,\n  23%,\n  31.999%,\n  37%,\n  44.999%,\n  46%,\n  49.999%,\n  51%,\n  58.999%,\n  61%,\n  68.999%,\n  71%,\n  85.999%,\n  96%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed; }\n  19%,\n  22.99%,\n  32%,\n  36.999%,\n  45%,\n  45.999%,\n  50%,\n  50.99%,\n  59%,\n  60.999%,\n  69%,\n  70.999%,\n  86%,\n  95.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n", ""]);
+exports.push([module.i, ".video-wrapper {\n  bottom: 0;\n  left: 0;\n  position: relative;\n  top: 0;\n  width: 100%;\n  min-height: 720px; }\n\n#bgvid {\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100vw;\n  height: 125vh;\n  position: absolute;\n  top: 0;\n  left: 0; }\n\n.main-title-wrapper {\n  color: #fff;\n  font-family: 'Monoton', cursive;\n  top: 100px;\n  margin: 10px;\n  text-align: center;\n  position: absolute;\n  width: 100%; }\n\n.intro-title {\n  color: #fff;\n  font-size: 4em;\n  position: relative; }\n\n#intro-flash {\n  animation: flash 3s;\n  -webkit-animation: flash 3s;\n  background-color: #fff;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  height: 2px;\n  margin: 0px auto;\n  width: 0px;\n  z-index: 10; }\n\n.main-contact-btn-wrapper {\n  position: absolute;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  top: 90vh;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 100%; }\n\n#scroll-to-about {\n  font-size: 50px;\n  color: #fff; }\n  #scroll-to-about:hover {\n    color: #ff0000;\n    transition: all 0.5s; }\n\n@keyframes flash {\n  0% {\n    max-width: 600px;\n    width: 90%; }\n  90% {\n    background-color: #1a1a1a; }\n  100% {\n    width: 0px; } }\n\n@-webkit-keyframes flash {\n  0% {\n    max-width: 600px;\n    width: 90%; }\n  100% {\n    width: 0px; } }\n\n.intro-title {\n  color: #fff;\n  text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff; }\n\n.intro-title span:nth-of-type(3) {\n  -webkit-animation: lower 11s linear infinite;\n          animation: lower 11s linear infinite; }\n\n.intro-title span:nth-of-type(1) {\n  -webkit-animation: lower 11s linear infinite;\n          animation: lower 11s linear infinite; }\n\n.intro-title span:nth-of-type(7) {\n  -webkit-animation: upper 14s linear infinite;\n          animation: upper 14s linear infinite; }\n\n.intro-title span:nth-of-type(5) {\n  -webkit-animation: upper 7s linear infinite;\n          animation: upper 7s linear infinite; }\n\n.intro-title span:nth-of-type(1) {\n  -webkit-animation: lower 3s linear infinite;\n          animation: lower 3s linear infinite; }\n\n.intro-title span:nth-of-type(4) {\n  -webkit-animation: lower 6s linear infinite;\n          animation: lower 6s linear infinite; }\n\n.intro-title span:nth-of-type(9) {\n  -webkit-animation: lower 10s linear infinite;\n          animation: lower 10s linear infinite; }\n\n.intro-title span:nth-of-type(2) {\n  -webkit-animation: upper 10s linear infinite;\n          animation: upper 10s linear infinite; }\n\n.intro-title span:nth-of-type(3) {\n  -webkit-animation: upper 9s linear infinite;\n          animation: upper 9s linear infinite; }\n\n.intro-title span:nth-of-type(2) {\n  text-shadow: none;\n  opacity: 0.4; }\n\n@-webkit-keyframes upper {\n  0%,\n  19.999%,\n  22%,\n  62.999%,\n  64%,\n  64.999%,\n  70%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff; }\n  20%,\n  21.999%,\n  63%,\n  63.999%,\n  65%,\n  69.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@keyframes upper {\n  0%,\n  19.999%,\n  22%,\n  62.999%,\n  64%,\n  64.999%,\n  70%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff; }\n  20%,\n  21.999%,\n  63%,\n  63.999%,\n  65%,\n  69.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@-webkit-keyframes lower {\n  0%,\n  12%,\n  18.999%,\n  23%,\n  31.999%,\n  37%,\n  44.999%,\n  46%,\n  49.999%,\n  51%,\n  58.999%,\n  61%,\n  68.999%,\n  71%,\n  85.999%,\n  96%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed; }\n  19%,\n  22.99%,\n  32%,\n  36.999%,\n  45%,\n  45.999%,\n  50%,\n  50.99%,\n  59%,\n  60.999%,\n  69%,\n  70.999%,\n  86%,\n  95.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@keyframes lower {\n  0%,\n  12%,\n  18.999%,\n  23%,\n  31.999%,\n  37%,\n  44.999%,\n  46%,\n  49.999%,\n  51%,\n  58.999%,\n  61%,\n  68.999%,\n  71%,\n  85.999%,\n  96%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed; }\n  19%,\n  22.99%,\n  32%,\n  36.999%,\n  45%,\n  45.999%,\n  50%,\n  50.99%,\n  59%,\n  60.999%,\n  69%,\n  70.999%,\n  86%,\n  95.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@media (max-width: 600px) {\n  .intro-title {\n    font-size: 2em; } }\n\n.initial-description-wrapper {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  top: 20px;\n  width: 90%;\n  margin: 0px auto; }\n  .initial-description-wrapper h6 {\n    color: #fff;\n    font-size: 2em;\n    top: 30%;\n    text-align: center;\n    width: 100%; }\n\n.about-1-icons {\n  background-repeat: no-repeat;\n  background-size: contain;\n  position: relative;\n  height: 100px;\n  width: 100px; }\n  .about-1-icons span {\n    background-color: green;\n    height: 3px;\n    position: absolute;\n    top: 29%;\n    right: 0px;\n    width: 20px; }\n\n.death-star-not-active {\n  display: none; }\n\n.death-star-active {\n  display: inline-block;\n  -webkit-animation: 5s deathBeam;\n          animation: 5s deathBeam;\n  opacity: 0; }\n\n#about-1-background,\n#about-2-background {\n  position: relative;\n  height: 600px;\n  width: 50%; }\n\n.about-1-icons-wrapper {\n  position: absolute;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column; }\n\n#about-1-background {\n  border-radius: 20px; }\n\n#about-2-background {\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position-y: center;\n  background-position-x: center;\n  border-radius: 20px;\n  top: 50px; }\n\n@keyframes deathBeam {\n  0% {\n    opacity: 1;\n    background: #88ab75;\n    width: 20px; }\n  100% {\n    background: #50ff00;\n    width: 300px;\n    right: -100vw; } }\n\n@-webkit-keyframes deathBeam {\n  0% {\n    opacity: 1;\n    background: #88ab75;\n    width: 20px; }\n  100% {\n    background: #50ff00;\n    width: 300px;\n    right: -100vw; } }\n\n.skills-container {\n  margin-top: 170px; }\n\n.skills-wrapper {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin: 240px auto 0px; }\n\n.skills {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border-radius: 15px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  max-width: 600px;\n  margin: 20px 0px;\n  width: 80%; }\n\n.style-icon {\n  background-size: contain;\n  background-repeat: no-repeat;\n  height: 75px;\n  width: 75px; }\n\n.skill-card {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 1.3em;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  font-family: \"Abel\", sans-serif;\n  height: 150px;\n  -webkit-box-pack: space-evenly;\n      -ms-flex-pack: space-evenly;\n          justify-content: space-evenly;\n  width: 200px; }\n\n.in-view {\n  transition: all 700ms ease-out;\n  -webkit-transform: translate3d(0px, -200px, 0px);\n  transform: translate3d(0px, -200, 0px);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden; }\n\n#html-skill {\n  width: 46px;\n  height: 44px; }\n\n#skill-1 {\n  background-color: #bfd8d2; }\n\n#skill-2 {\n  background-color: #fedcd2; }\n\n#skill-3 {\n  background-color: #df744a; }\n\n#skill-4 {\n  background-color: #2d93ad; }\n\n@media (max-width: 520px) {\n  .skills {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; } }\n\n.projects {\n  position: relative;\n  height: 500px;\n  margin: 0px auto;\n  max-width: 1000px;\n  min-width: 320px;\n  overflow: hidden;\n  width: 90%;\n  border-top: 20px double #fed631; }\n\n.project {\n  position: absolute;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n  height: 100%;\n  transition: all 1s;\n  width: 100%; }\n\n.not-active-project {\n  top: -500px; }\n\n.active-project {\n  top: 0px; }\n\n.projects-btn {\n  background-color: rgba(0, 0, 0, 0.4);\n  border: 1px solid #fff;\n  bottom: 5%;\n  border-radius: 100%;\n  color: #fff;\n  font-size: 20px;\n  padding: 20px;\n  position: absolute;\n  transition: all 0.5s;\n  z-index: 5; }\n  .projects-btn:hover {\n    background-color: #fff;\n    border-color: #1a1a1a;\n    color: #1a1a1a; }\n  .projects-btn:active {\n    background-color: #fff; }\n\n.project-info {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  background: rgba(0, 0, 0, 0.6);\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n\n.project-title {\n  color: #fff;\n  padding: 5px;\n  font-size: 1.5em;\n  text-align: center; }\n\n.project-links {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex; }\n  .project-links a {\n    transition: all 0.5s ease-in-out; }\n    .project-links a:hover {\n      -webkit-transform: scale(1.1);\n              transform: scale(1.1); }\n  .project-links img {\n    height: 60px;\n    width: 75px; }\n\n.projects-btn:nth-of-type(1) {\n  left: 10px; }\n\n.projects-btn:nth-of-type(2) {\n  right: 10px; }\n\n* {\n  padding: 0px;\n  margin: 0px;\n  box-sizing: border-box; }\n\nhtml {\n  background: #1a1a1a; }\n\nh6 {\n  font-family: \"Abel\", sans-serif; }\n\n.section-headline {\n  color: #fff;\n  font-size: 3em;\n  font-family: \"Monoton\", cursive;\n  text-align: center;\n  text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff; }\n\n.section-headline span:nth-of-type(1) {\n  -webkit-animation: red-light 5s linear infinite;\n          animation: red-light 5s linear infinite; }\n\n@-webkit-keyframes red-light {\n  0%,\n  12%,\n  18.999%,\n  23%,\n  31.999%,\n  37%,\n  44.999%,\n  46%,\n  49.999%,\n  51%,\n  58.999%,\n  61%,\n  68.999%,\n  71%,\n  85.999%,\n  96%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed; }\n  19%,\n  22.99%,\n  32%,\n  36.999%,\n  45%,\n  45.999%,\n  50%,\n  50.99%,\n  59%,\n  60.999%,\n  69%,\n  70.999%,\n  86%,\n  95.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@keyframes red-light {\n  0%,\n  12%,\n  18.999%,\n  23%,\n  31.999%,\n  37%,\n  44.999%,\n  46%,\n  49.999%,\n  51%,\n  58.999%,\n  61%,\n  68.999%,\n  71%,\n  85.999%,\n  96%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed; }\n  19%,\n  22.99%,\n  32%,\n  36.999%,\n  45%,\n  45.999%,\n  50%,\n  50.99%,\n  59%,\n  60.999%,\n  69%,\n  70.999%,\n  86%,\n  95.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n", ""]);
 
 // exports
 

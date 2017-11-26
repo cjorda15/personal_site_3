@@ -1,6 +1,5 @@
 import React from 'react';
 import Main from './Main';
-import BurgerMenu from './BurgerMenu';
 import InitialDescription from './InitialDescription';
 import Skills from './Skills';
 import Projects from './Projects';
@@ -11,7 +10,6 @@ import '../helper/scroll';
 const App = () => {
   return (
     <div className="app-container">
-      <BurgerMenu />
       <Main />
       <InitialDescription />
       <Skills />

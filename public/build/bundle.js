@@ -32336,10 +32336,6 @@ var _Main = __webpack_require__(44);
 
 var _Main2 = _interopRequireDefault(_Main);
 
-var _BurgerMenu = __webpack_require__(45);
-
-var _BurgerMenu2 = _interopRequireDefault(_BurgerMenu);
-
 var _InitialDescription = __webpack_require__(46);
 
 var _InitialDescription2 = _interopRequireDefault(_InitialDescription);
@@ -32364,7 +32360,6 @@ var App = function App() {
   return _react2.default.createElement(
     'div',
     { className: 'app-container' },
-    _react2.default.createElement(_BurgerMenu2.default, null),
     _react2.default.createElement(_Main2.default, null),
     _react2.default.createElement(_InitialDescription2.default, null),
     _react2.default.createElement(_Skills2.default, null),
@@ -32534,167 +32529,7 @@ var Main = function Main() {
 exports.default = Main;
 
 /***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _jquery = __webpack_require__(4);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var BurgerMenu = function (_Component) {
-  _inherits(BurgerMenu, _Component);
-
-  function BurgerMenu() {
-    _classCallCheck(this, BurgerMenu);
-
-    var _this = _possibleConstructorReturn(this, (BurgerMenu.__proto__ || Object.getPrototypeOf(BurgerMenu)).call(this));
-
-    _this.state = { open: false };
-    return _this;
-  }
-
-  _createClass(BurgerMenu, [{
-    key: 'handleClick',
-    value: function handleClick(e) {
-      // e.preventDefault();
-      this.setState({ open: !this.state.open });
-      (0, _jquery2.default)('.c-hamburger').toggleClass('is-active');
-    }
-  }, {
-    key: 'showMenu',
-    value: function showMenu() {
-      var _this2 = this;
-
-      return _react2.default.createElement(
-        'div',
-        { className: 'navbar-menu' },
-        _react2.default.createElement(
-          'div',
-          { className: 'nav-links-wrapper' },
-          _react2.default.createElement(
-            'a',
-            {
-              onClick: function onClick(e) {
-                _this2.handleClick(e);
-                _this2.jump(e);
-              },
-              className: 'nav-link',
-              href: '#home'
-            },
-            'home'
-          ),
-          _react2.default.createElement(
-            'a',
-            {
-              onClick: function onClick(e) {
-                _this2.handleClick(e);
-              },
-              className: 'nav-link',
-              to: '#skills'
-            },
-            'skills'
-          ),
-          _react2.default.createElement(
-            'a',
-            {
-              onClick: function onClick(e) {
-                _this2.handleClick(e);
-              },
-              className: 'nav-link',
-              to: '/projects'
-            },
-            'projects'
-          ),
-          _react2.default.createElement(
-            'a',
-            {
-              onClick: function onClick(e) {
-                _this2.handleClick(e);
-              },
-              className: 'nav-link',
-              to: '/resume'
-            },
-            'resume'
-          ),
-          _react2.default.createElement(
-            'a',
-            {
-              onClick: function onClick(e) {
-                _this2.handleClick(e);
-              },
-              className: 'nav-link',
-              to: '/contact'
-            },
-            'contact'
-          )
-        )
-      );
-    }
-  }, {
-    key: 'jump',
-    value: function jump(e) {
-      console.log((0, _jquery2.default)(this));
-      if (e) {
-        var target = (0, _jquery2.default)(this).parents('.side-nav-link').prevObject[0].getAttribute('href');
-      } else {
-        var target = location.hash;
-      }
-      if (target.indexOf('http') == 0) return;
-      //  e.preventDefault();
-      (0, _jquery2.default)('html,body').animate({
-        scrollTop: (0, _jquery2.default)(target).offset().top
-      }, 1500, function () {});
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this3 = this;
-
-      return _react2.default.createElement(
-        'nav',
-        { className: 'burger-menu-wrapper' },
-        _react2.default.createElement(
-          'button',
-          {
-            onClick: function onClick(e) {
-              _this3.handleClick(e);
-            },
-            className: 'c-hamburger c-hamburger--htx'
-          },
-          _react2.default.createElement('span', null)
-        ),
-        this.state.open ? this.showMenu() : null
-      );
-    }
-  }]);
-
-  return BurgerMenu;
-}(_react.Component);
-
-exports.default = BurgerMenu;
-
-/***/ }),
+/* 45 */,
 /* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -33188,7 +33023,7 @@ var Project = function (_Component) {
               },
               className: 'toggleButton'
             },
-            '\u2192'
+            'x summary'
           )
         ),
         _react2.default.createElement(
@@ -33212,20 +33047,20 @@ var Project = function (_Component) {
               },
               '\u2190 summary'
             )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'project-links' },
+          _react2.default.createElement(
+            'a',
+            { href: this.props.info.liveLink },
+            'live'
           ),
           _react2.default.createElement(
-            'div',
-            { className: 'project-links' },
-            _react2.default.createElement(
-              'a',
-              { href: this.props.info.liveLink },
-              'live'
-            ),
-            _react2.default.createElement(
-              'a',
-              { href: this.props.info.codeSrcLink },
-              'code'
-            )
+            'a',
+            { href: this.props.info.codeSrcLink },
+            'code'
           )
         )
       );
@@ -33312,7 +33147,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     var st = (0, _jquery2.default)(this).scrollTop();
     if (st > lastScrollTop) {
       if (!(current >= 75)) {
-        current += 0.85;
+        current += 0.65;
         (0, _jquery2.default)('.about-1-icons-wrapper').css({ top: current + '%' });
       } else {
         (0, _jquery2.default)('.death-star-not-active').toggleClass('death-star-not-active').toggleClass('death-star-active');
@@ -33401,7 +33236,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Abe
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Monoton);", ""]);
 
 // module
-exports.push([module.i, ".video-wrapper {\n  bottom: 0;\n  left: 0;\n  position: relative;\n  top: 0;\n  width: 100%;\n  min-height: 720px; }\n\n#bgvid {\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100vw;\n  height: 125vh;\n  position: absolute;\n  top: 0;\n  left: 0; }\n\n.main-title-wrapper {\n  color: #fff;\n  font-family: \"Monoton\", cursive;\n  top: 100px;\n  margin: 10px;\n  text-align: center;\n  position: absolute;\n  width: 100%; }\n\n.intro-title {\n  color: #fff;\n  font-size: 4em;\n  position: relative; }\n\n#intro-flash {\n  animation: flash 3s;\n  -webkit-animation: flash 3s;\n  background-color: #fff;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  height: 2px;\n  margin: 0px auto;\n  width: 0px;\n  z-index: 10; }\n\n.main-contact-btn-wrapper {\n  position: absolute;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  top: 90vh;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 100%; }\n\n#scroll-to-about {\n  font-size: 50px;\n  color: #fff; }\n  #scroll-to-about:hover {\n    color: #ff0000;\n    transition: all 0.5s; }\n\n@keyframes flash {\n  0% {\n    max-width: 600px;\n    width: 90%; }\n  90% {\n    background-color: #1a1a1a; }\n  100% {\n    width: 0px; } }\n\n@-webkit-keyframes flash {\n  0% {\n    max-width: 600px;\n    width: 90%; }\n  100% {\n    width: 0px; } }\n\n.intro-title {\n  color: #fff;\n  text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff; }\n\n.intro-title span:nth-of-type(3) {\n  -webkit-animation: lower 11s linear infinite;\n          animation: lower 11s linear infinite; }\n\n.intro-title span:nth-of-type(1) {\n  -webkit-animation: lower 11s linear infinite;\n          animation: lower 11s linear infinite; }\n\n.intro-title span:nth-of-type(7) {\n  -webkit-animation: upper 14s linear infinite;\n          animation: upper 14s linear infinite; }\n\n.intro-title span:nth-of-type(5) {\n  -webkit-animation: upper 7s linear infinite;\n          animation: upper 7s linear infinite; }\n\n.intro-title span:nth-of-type(1) {\n  -webkit-animation: lower 3s linear infinite;\n          animation: lower 3s linear infinite; }\n\n.intro-title span:nth-of-type(4) {\n  -webkit-animation: lower 6s linear infinite;\n          animation: lower 6s linear infinite; }\n\n.intro-title span:nth-of-type(9) {\n  -webkit-animation: lower 10s linear infinite;\n          animation: lower 10s linear infinite; }\n\n.intro-title span:nth-of-type(2) {\n  -webkit-animation: upper 10s linear infinite;\n          animation: upper 10s linear infinite; }\n\n.intro-title span:nth-of-type(3) {\n  -webkit-animation: upper 9s linear infinite;\n          animation: upper 9s linear infinite; }\n\n.intro-title span:nth-of-type(2) {\n  text-shadow: none;\n  opacity: 0.4; }\n\n@-webkit-keyframes upper {\n  0%,\n  19.999%,\n  22%,\n  62.999%,\n  64%,\n  64.999%,\n  70%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff; }\n  20%,\n  21.999%,\n  63%,\n  63.999%,\n  65%,\n  69.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@keyframes upper {\n  0%,\n  19.999%,\n  22%,\n  62.999%,\n  64%,\n  64.999%,\n  70%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff; }\n  20%,\n  21.999%,\n  63%,\n  63.999%,\n  65%,\n  69.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@-webkit-keyframes lower {\n  0%,\n  12%,\n  18.999%,\n  23%,\n  31.999%,\n  37%,\n  44.999%,\n  46%,\n  49.999%,\n  51%,\n  58.999%,\n  61%,\n  68.999%,\n  71%,\n  85.999%,\n  96%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed; }\n  19%,\n  22.99%,\n  32%,\n  36.999%,\n  45%,\n  45.999%,\n  50%,\n  50.99%,\n  59%,\n  60.999%,\n  69%,\n  70.999%,\n  86%,\n  95.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@keyframes lower {\n  0%,\n  12%,\n  18.999%,\n  23%,\n  31.999%,\n  37%,\n  44.999%,\n  46%,\n  49.999%,\n  51%,\n  58.999%,\n  61%,\n  68.999%,\n  71%,\n  85.999%,\n  96%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed; }\n  19%,\n  22.99%,\n  32%,\n  36.999%,\n  45%,\n  45.999%,\n  50%,\n  50.99%,\n  59%,\n  60.999%,\n  69%,\n  70.999%,\n  86%,\n  95.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@media (max-width: 600px) {\n  .intro-title {\n    font-size: 2em; } }\n\n.navbar-menu {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background: #1a1a1a;\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  opacity: 0.9;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  z-index: 10; }\n\n.nav-links-wrapper {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  padding-top: 100px;\n  padding-bottom: 15px;\n  width: 100%;\n  height: 44px; }\n\n.nav-link {\n  border-bottom: 2px solid #ff0000;\n  color: #fff;\n  font-size: 24px;\n  font-family: \"Monoton\", cursive;\n  text-decoration: none;\n  max-height: 27px;\n  text-shadow: black 2px 3px 2px;\n  width: 100px; }\n  .nav-link:hover {\n    border-bottom: 2px #fff solid;\n    color: #ff0000;\n    transition: all 0.5s; }\n\n.c-hamburger {\n  display: block;\n  position: fixed;\n  overflow: hidden;\n  margin: 0;\n  padding: 0;\n  width: 96px;\n  height: 96px;\n  font-size: 0;\n  text-indent: -9999px;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  box-shadow: none;\n  border-radius: none;\n  border: none;\n  cursor: pointer;\n  transition: background 0.3s;\n  z-index: 100; }\n\n.c-hamburger:focus {\n  outline: none; }\n\n.c-hamburger span {\n  display: block;\n  position: absolute;\n  top: 44px;\n  left: 18px;\n  right: 18px;\n  height: 8px;\n  background: white; }\n\n.c-hamburger span::before,\n.c-hamburger span::after {\n  position: absolute;\n  display: block;\n  left: 0;\n  width: 100%;\n  height: 8px;\n  background-color: #fff;\n  content: ''; }\n\n.c-hamburger span::before {\n  top: -20px; }\n\n.c-hamburger span::after {\n  bottom: -20px; }\n\n.c-hamburger--htx {\n  background-color: #b674c7; }\n\n.c-hamburger--htx span {\n  transition: background 0s 0.3s; }\n\n.c-hamburger--htx span::before,\n.c-hamburger--htx span::after {\n  transition-duration: 0.3s, 0.3s;\n  transition-delay: 0.3s, 0s; }\n\n.c-hamburger--htx span::before {\n  transition-property: top, -webkit-transform;\n  transition-property: top, transform;\n  transition-property: top, transform, -webkit-transform; }\n\n.c-hamburger--htx span::after {\n  transition-property: bottom, -webkit-transform;\n  transition-property: bottom, transform;\n  transition-property: bottom, transform, -webkit-transform; }\n\n.c-hamburger--htx.is-active {\n  background-color: #b674c7; }\n\n.c-hamburger--htx.is-active span {\n  background: none; }\n\n.c-hamburger--htx.is-active span::before {\n  top: 0;\n  -webkit-transform: rotate(45deg);\n          transform: rotate(45deg); }\n\n.c-hamburger--htx.is-active span::after {\n  bottom: 0;\n  -webkit-transform: rotate(-45deg);\n          transform: rotate(-45deg); }\n\n.c-hamburger--htx.is-active span::before,\n.c-hamburger--htx.is-active span::after {\n  transition-delay: 0s, 0.3s; }\n\n.initial-description-wrapper {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  top: 20px;\n  width: 90%;\n  margin: 0px auto; }\n  .initial-description-wrapper h6 {\n    color: #fff;\n    font-size: 2em;\n    position: absolute;\n    top: 30%;\n    text-align: center;\n    width: 100%; }\n\n.about-1-icons {\n  background-repeat: no-repeat;\n  background-size: contain;\n  position: relative;\n  height: 100px;\n  width: 100px; }\n  .about-1-icons span {\n    background-color: green;\n    height: 3px;\n    position: absolute;\n    top: 29%;\n    right: 0px;\n    width: 20px; }\n\n.death-star-not-active {\n  display: none; }\n\n.death-star-active {\n  display: inline-block;\n  -webkit-animation: 5s deathBeam;\n          animation: 5s deathBeam;\n  opacity: 0; }\n\n#about-1-background,\n#about-2-background {\n  position: relative;\n  height: 400px;\n  width: 50%; }\n\n.about-1-icons-wrapper {\n  position: absolute;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column; }\n\n#about-1-background {\n  border-radius: 20px;\n  overflow: hidden; }\n\n#about-2-background {\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position-y: center;\n  background-position-x: center;\n  border-radius: 20px;\n  top: 50px; }\n\n@keyframes deathBeam {\n  0% {\n    opacity: 1;\n    background: #88ab75;\n    width: 20px; }\n  100% {\n    background: #50ff00;\n    width: 300px;\n    right: -100vw; } }\n\n@-webkit-keyframes deathBeam {\n  0% {\n    opacity: 1;\n    background: #88ab75;\n    width: 20px; }\n  100% {\n    background: #50ff00;\n    width: 300px;\n    right: -100vw; } }\n\n.skills-container {\n  margin-top: 170px; }\n\n.skills-wrapper {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin: 240px auto 0px; }\n\n.skills {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border-radius: 15px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  max-width: 600px;\n  margin: 20px 0px;\n  width: 80%; }\n\n.style-icon {\n  background-size: contain;\n  background-repeat: no-repeat;\n  height: 75px;\n  width: 75px; }\n\n.skill-card {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 1.3em;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  font-family: \"Abel\", sans-serif;\n  height: 150px;\n  -webkit-box-pack: space-evenly;\n      -ms-flex-pack: space-evenly;\n          justify-content: space-evenly;\n  width: 200px; }\n\n.in-view {\n  transition: all 700ms ease-out;\n  -webkit-transform: translate3d(0px, -200px, 0px);\n  transform: translate3d(0px, -200, 0px);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden; }\n\n#html-skill {\n  width: 46px;\n  height: 44px; }\n\n#skill-1 {\n  background-color: #bfd8d2; }\n\n#skill-2 {\n  background-color: #fedcd2; }\n\n#skill-3 {\n  background-color: #df744a; }\n\n#skill-4 {\n  background-color: #2d93ad; }\n\n@media (max-width: 520px) {\n  .skills {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; } }\n\n.projects {\n  position: relative;\n  height: 500px;\n  margin: 0px auto;\n  max-width: 1000px;\n  min-width: 320px;\n  overflow: hidden;\n  width: 90%;\n  border-top: 20px dotted #fed631;\n  border-bottom: 20px dotted #fed631; }\n\n.project {\n  position: absolute;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n  height: 100%;\n  transition: all 1s;\n  width: 100%; }\n\n.not-active-project {\n  top: -500px; }\n\n.active-project {\n  top: 0px; }\n\n.projects-btn {\n  background-color: rgba(0, 0, 0, 0.4);\n  border: 1px solid #fff;\n  bottom: 5%;\n  border-radius: 100%;\n  color: #fff;\n  font-size: 20px;\n  padding: 20px;\n  position: absolute;\n  transition: all 0.5s;\n  z-index: 5; }\n  .projects-btn:hover {\n    background-color: #fff;\n    border-color: #1a1a1a;\n    color: #1a1a1a; }\n  .projects-btn:active {\n    background-color: #fff; }\n\n.project-content {\n  position: absolute;\n  transition: all 0.5s;\n  height: 100%;\n  width: 100%; }\n\n.project-content-inactive {\n  border: 1px solid white;\n  left: -500px;\n  z-index: -1; }\n\n.project-content-active {\n  border: 1px solid red;\n  left: 0px; }\n\n.projects-btn:nth-of-type(1) {\n  left: 10px; }\n\n.projects-btn:nth-of-type(2) {\n  right: 10px; }\n\n* {\n  padding: 0px;\n  margin: 0px;\n  box-sizing: border-box; }\n\nhtml {\n  background: #1a1a1a; }\n\nh6 {\n  font-family: \"Abel\", sans-serif; }\n\n.section-headline {\n  color: #fff;\n  font-size: 3em;\n  font-family: \"Monoton\", cursive;\n  text-align: center;\n  text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff; }\n\n.section-headline span:nth-of-type(1) {\n  -webkit-animation: red-light 5s linear infinite;\n          animation: red-light 5s linear infinite; }\n\n@-webkit-keyframes red-light {\n  0%,\n  12%,\n  18.999%,\n  23%,\n  31.999%,\n  37%,\n  44.999%,\n  46%,\n  49.999%,\n  51%,\n  58.999%,\n  61%,\n  68.999%,\n  71%,\n  85.999%,\n  96%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed; }\n  19%,\n  22.99%,\n  32%,\n  36.999%,\n  45%,\n  45.999%,\n  50%,\n  50.99%,\n  59%,\n  60.999%,\n  69%,\n  70.999%,\n  86%,\n  95.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@keyframes red-light {\n  0%,\n  12%,\n  18.999%,\n  23%,\n  31.999%,\n  37%,\n  44.999%,\n  46%,\n  49.999%,\n  51%,\n  58.999%,\n  61%,\n  68.999%,\n  71%,\n  85.999%,\n  96%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed; }\n  19%,\n  22.99%,\n  32%,\n  36.999%,\n  45%,\n  45.999%,\n  50%,\n  50.99%,\n  59%,\n  60.999%,\n  69%,\n  70.999%,\n  86%,\n  95.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n", ""]);
+exports.push([module.i, ".video-wrapper {\n  bottom: 0;\n  left: 0;\n  position: relative;\n  top: 0;\n  width: 100%;\n  min-height: 720px; }\n\n#bgvid {\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100vw;\n  height: 125vh;\n  position: absolute;\n  top: 0;\n  left: 0; }\n\n.main-title-wrapper {\n  color: #fff;\n  font-family: 'Monoton', cursive;\n  top: 100px;\n  margin: 10px;\n  text-align: center;\n  position: absolute;\n  width: 100%; }\n\n.intro-title {\n  color: #fff;\n  font-size: 4em;\n  position: relative; }\n\n#intro-flash {\n  animation: flash 3s;\n  -webkit-animation: flash 3s;\n  background-color: #fff;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  height: 2px;\n  margin: 0px auto;\n  width: 0px;\n  z-index: 10; }\n\n.main-contact-btn-wrapper {\n  position: absolute;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  top: 90vh;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 100%; }\n\n#scroll-to-about {\n  font-size: 50px;\n  color: #fff; }\n  #scroll-to-about:hover {\n    color: #ff0000;\n    transition: all 0.5s; }\n\n@keyframes flash {\n  0% {\n    max-width: 600px;\n    width: 90%; }\n  90% {\n    background-color: #1a1a1a; }\n  100% {\n    width: 0px; } }\n\n@-webkit-keyframes flash {\n  0% {\n    max-width: 600px;\n    width: 90%; }\n  100% {\n    width: 0px; } }\n\n.intro-title {\n  color: #fff;\n  text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff; }\n\n.intro-title span:nth-of-type(3) {\n  -webkit-animation: lower 11s linear infinite;\n          animation: lower 11s linear infinite; }\n\n.intro-title span:nth-of-type(1) {\n  -webkit-animation: lower 11s linear infinite;\n          animation: lower 11s linear infinite; }\n\n.intro-title span:nth-of-type(7) {\n  -webkit-animation: upper 14s linear infinite;\n          animation: upper 14s linear infinite; }\n\n.intro-title span:nth-of-type(5) {\n  -webkit-animation: upper 7s linear infinite;\n          animation: upper 7s linear infinite; }\n\n.intro-title span:nth-of-type(1) {\n  -webkit-animation: lower 3s linear infinite;\n          animation: lower 3s linear infinite; }\n\n.intro-title span:nth-of-type(4) {\n  -webkit-animation: lower 6s linear infinite;\n          animation: lower 6s linear infinite; }\n\n.intro-title span:nth-of-type(9) {\n  -webkit-animation: lower 10s linear infinite;\n          animation: lower 10s linear infinite; }\n\n.intro-title span:nth-of-type(2) {\n  -webkit-animation: upper 10s linear infinite;\n          animation: upper 10s linear infinite; }\n\n.intro-title span:nth-of-type(3) {\n  -webkit-animation: upper 9s linear infinite;\n          animation: upper 9s linear infinite; }\n\n.intro-title span:nth-of-type(2) {\n  text-shadow: none;\n  opacity: 0.4; }\n\n@-webkit-keyframes upper {\n  0%,\n  19.999%,\n  22%,\n  62.999%,\n  64%,\n  64.999%,\n  70%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff; }\n  20%,\n  21.999%,\n  63%,\n  63.999%,\n  65%,\n  69.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@keyframes upper {\n  0%,\n  19.999%,\n  22%,\n  62.999%,\n  64%,\n  64.999%,\n  70%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff; }\n  20%,\n  21.999%,\n  63%,\n  63.999%,\n  65%,\n  69.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@-webkit-keyframes lower {\n  0%,\n  12%,\n  18.999%,\n  23%,\n  31.999%,\n  37%,\n  44.999%,\n  46%,\n  49.999%,\n  51%,\n  58.999%,\n  61%,\n  68.999%,\n  71%,\n  85.999%,\n  96%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed; }\n  19%,\n  22.99%,\n  32%,\n  36.999%,\n  45%,\n  45.999%,\n  50%,\n  50.99%,\n  59%,\n  60.999%,\n  69%,\n  70.999%,\n  86%,\n  95.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@keyframes lower {\n  0%,\n  12%,\n  18.999%,\n  23%,\n  31.999%,\n  37%,\n  44.999%,\n  46%,\n  49.999%,\n  51%,\n  58.999%,\n  61%,\n  68.999%,\n  71%,\n  85.999%,\n  96%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed; }\n  19%,\n  22.99%,\n  32%,\n  36.999%,\n  45%,\n  45.999%,\n  50%,\n  50.99%,\n  59%,\n  60.999%,\n  69%,\n  70.999%,\n  86%,\n  95.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@media (max-width: 600px) {\n  .intro-title {\n    font-size: 2em; } }\n\n.initial-description-wrapper {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  top: 20px;\n  width: 90%;\n  margin: 0px auto; }\n  .initial-description-wrapper h6 {\n    color: #fff;\n    font-size: 2em;\n    top: 30%;\n    text-align: center;\n    width: 100%; }\n\n.about-1-icons {\n  background-repeat: no-repeat;\n  background-size: contain;\n  position: relative;\n  height: 100px;\n  width: 100px; }\n  .about-1-icons span {\n    background-color: green;\n    height: 3px;\n    position: absolute;\n    top: 29%;\n    right: 0px;\n    width: 20px; }\n\n.death-star-not-active {\n  display: none; }\n\n.death-star-active {\n  display: inline-block;\n  -webkit-animation: 5s deathBeam;\n          animation: 5s deathBeam;\n  opacity: 0; }\n\n#about-1-background,\n#about-2-background {\n  position: relative;\n  height: 600px;\n  width: 50%; }\n\n.about-1-icons-wrapper {\n  position: absolute;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column; }\n\n#about-1-background {\n  border-radius: 20px; }\n\n#about-2-background {\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position-y: center;\n  background-position-x: center;\n  border-radius: 20px;\n  top: 50px; }\n\n@keyframes deathBeam {\n  0% {\n    opacity: 1;\n    background: #88ab75;\n    width: 20px; }\n  100% {\n    background: #50ff00;\n    width: 300px;\n    right: -100vw; } }\n\n@-webkit-keyframes deathBeam {\n  0% {\n    opacity: 1;\n    background: #88ab75;\n    width: 20px; }\n  100% {\n    background: #50ff00;\n    width: 300px;\n    right: -100vw; } }\n\n.skills-container {\n  margin-top: 170px; }\n\n.skills-wrapper {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin: 240px auto 0px; }\n\n.skills {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border-radius: 15px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  max-width: 600px;\n  margin: 20px 0px;\n  width: 80%; }\n\n.style-icon {\n  background-size: contain;\n  background-repeat: no-repeat;\n  height: 75px;\n  width: 75px; }\n\n.skill-card {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 1.3em;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  font-family: \"Abel\", sans-serif;\n  height: 150px;\n  -webkit-box-pack: space-evenly;\n      -ms-flex-pack: space-evenly;\n          justify-content: space-evenly;\n  width: 200px; }\n\n.in-view {\n  transition: all 700ms ease-out;\n  -webkit-transform: translate3d(0px, -200px, 0px);\n  transform: translate3d(0px, -200, 0px);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden; }\n\n#html-skill {\n  width: 46px;\n  height: 44px; }\n\n#skill-1 {\n  background-color: #bfd8d2; }\n\n#skill-2 {\n  background-color: #fedcd2; }\n\n#skill-3 {\n  background-color: #df744a; }\n\n#skill-4 {\n  background-color: #2d93ad; }\n\n@media (max-width: 520px) {\n  .skills {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; } }\n\n.projects {\n  position: relative;\n  height: 500px;\n  margin: 0px auto;\n  max-width: 1000px;\n  min-width: 320px;\n  overflow: hidden;\n  width: 90%;\n  border-top: 20px dotted #fed631;\n  border-bottom: 20px dotted #fed631; }\n\n.project {\n  position: absolute;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n  height: 100%;\n  transition: all 1s;\n  width: 100%; }\n\n.not-active-project {\n  top: -500px; }\n\n.active-project {\n  top: 0px; }\n\n.projects-btn {\n  background-color: rgba(0, 0, 0, 0.4);\n  border: 1px solid #fff;\n  bottom: 5%;\n  border-radius: 100%;\n  color: #fff;\n  font-size: 20px;\n  padding: 20px;\n  position: absolute;\n  transition: all 0.5s;\n  z-index: 5; }\n  .projects-btn:hover {\n    background-color: #fff;\n    border-color: #1a1a1a;\n    color: #1a1a1a; }\n  .projects-btn:active {\n    background-color: #fff; }\n\n.project-content {\n  position: absolute;\n  transition: all 0.5s;\n  height: 100%;\n  width: 100%; }\n\n.project-content-inactive {\n  left: -500px;\n  z-index: -1; }\n\n.project-content-active {\n  left: 0px; }\n\n.project-links {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  position: absolute;\n  right: 0px; }\n\n.projects-btn:nth-of-type(1) {\n  left: 10px; }\n\n.projects-btn:nth-of-type(2) {\n  right: 10px; }\n\n* {\n  padding: 0px;\n  margin: 0px;\n  box-sizing: border-box; }\n\nhtml {\n  background: #1a1a1a; }\n\nh6 {\n  font-family: \"Abel\", sans-serif; }\n\n.section-headline {\n  color: #fff;\n  font-size: 3em;\n  font-family: \"Monoton\", cursive;\n  text-align: center;\n  text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff; }\n\n.section-headline span:nth-of-type(1) {\n  -webkit-animation: red-light 5s linear infinite;\n          animation: red-light 5s linear infinite; }\n\n@-webkit-keyframes red-light {\n  0%,\n  12%,\n  18.999%,\n  23%,\n  31.999%,\n  37%,\n  44.999%,\n  46%,\n  49.999%,\n  51%,\n  58.999%,\n  61%,\n  68.999%,\n  71%,\n  85.999%,\n  96%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed; }\n  19%,\n  22.99%,\n  32%,\n  36.999%,\n  45%,\n  45.999%,\n  50%,\n  50.99%,\n  59%,\n  60.999%,\n  69%,\n  70.999%,\n  86%,\n  95.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n\n@keyframes red-light {\n  0%,\n  12%,\n  18.999%,\n  23%,\n  31.999%,\n  37%,\n  44.999%,\n  46%,\n  49.999%,\n  51%,\n  58.999%,\n  61%,\n  68.999%,\n  71%,\n  85.999%,\n  96%,\n  100% {\n    opacity: 0.99;\n    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed; }\n  19%,\n  22.99%,\n  32%,\n  36.999%,\n  45%,\n  45.999%,\n  50%,\n  50.99%,\n  59%,\n  60.999%,\n  69%,\n  70.999%,\n  86%,\n  95.999% {\n    opacity: 0.4;\n    text-shadow: none; } }\n", ""]);
 
 // exports
 

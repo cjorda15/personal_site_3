@@ -27,7 +27,7 @@ class Project extends Component {
             }}
             className="toggleButton"
           >
-            &rarr;
+            x summary
           </p>
         </div>
         <div className="project-content project-content-active">
@@ -42,10 +42,10 @@ class Project extends Component {
               &larr; summary
             </p>
           </div>
-          <div className="project-links">
-            <a href={this.props.info.liveLink}>live</a>
-            <a href={this.props.info.codeSrcLink}>code</a>
-          </div>
+        </div>
+        <div className="project-links">
+          <a href={this.props.info.liveLink}>live</a>
+          <a href={this.props.info.codeSrcLink}>code</a>
         </div>
       </div>
     );

@@ -68,11 +68,41 @@
 .project-info {
 }
 
+.project-title {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 5px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
 .project-links {
   display: flex;
   flex-direction: column;
   position: absolute;
   right: 0px;
+  a {
+    position: relative;
+    color: $white;
+    transition: all 1s;
+    &:hover {
+      color: $red;
+    }
+    div {
+      background: rgba(0, 0, 0, 0.75);
+      border-radius: 4px;
+      bottom: 0%;
+      position: absolute;
+      font-family: $regular-font;
+      font-size: 1.3em;
+      left: -20%;
+      padding: 3px;
+    }
+  }
+  img {
+    height: 75px;
+    width: 75px;
+  }
 }
 
 .projects-btn:nth-of-type(1) {

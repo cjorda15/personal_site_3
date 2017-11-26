@@ -5,14 +5,16 @@ import $ from 'jquery';
 const project = [
   {
     title: 'color your day',
-    summary: 'used with blah',
+    summary:
+      'ajsndfkjnaks nakn fkna kjsnfjkansfjkna knfkan sfkjn ajkfnjkansfjknasjkfn jkan fjkna jkfnjk sankn n jakskfjan asdf a sdfa sdf d af df sd ',
     liveLink: `https://color-your-day.herokuapp.com/`,
     codeSrcLink: 'https://github.com/cjorda15/color_your_day',
     img: `project_images/colorMe-min.png`
   },
   {
     title: 'Static Site',
-    summary: 'used with grrr',
+    summary:
+      'used with gaasdfsdfrrr ajsndfkjnaks nakn fkna kjsnfjkansfjkna knfkan sfkjn ajkfnjkansfjknasjkfn jkan fjkna jkfnjk sankn n jakskfjan',
     liveLink: `https://cjorda15.github.io/cj-comp-challenge-3/`,
     codeSrcLink: 'https://github.com/cjorda15/cj-comp-challenge-3',
     img: `project_images/static-min.png`
@@ -27,7 +29,8 @@ const project = [
   },
   {
     title: 'CODE SPORT',
-    summary: 'used with blah',
+    summary:
+      'used with blah ajsndfkjnaks nakn fkna kjsnfjkansfjkna knfkan sfkjn ajkfnjkansfjknasjkfn jkan fjkna jkfnjk sankn n jakskfjan',
     liveLink: `https://github.com/cjorda15/CodeSport`,
     codeSrcLink: 'https://sleepy-anchorage-74386.herokuapp.com',
     img: `project_images/codeSport-min.png`

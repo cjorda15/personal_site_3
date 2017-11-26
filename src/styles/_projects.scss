@@ -1,18 +1,22 @@
 .projects {
   position: relative;
-  height: 400px;
+  height: 500px;
   margin: 0px auto;
-  max-width: 600px;
+  max-width: 1000px;
   min-width: 320px;
   overflow: hidden;
-  width: 100%;
+  width: 90%;
+  border-top: 20px dotted $gold;
+  border-bottom: 20px dotted $gold;
 }
 
 .project {
   position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   height: 100%;
+  transition: all 1s;
   width: 100%;
 }
 
@@ -25,13 +29,48 @@
 }
 
 .projects-btn {
-  background: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid $white;
+  bottom: 5%;
   border-radius: 100%;
-  font-size: 30px;
-  padding: 10px;
+  color: $white;
+  font-size: 20px;
+  padding: 20px;
   position: absolute;
-  top: 50%;
+  transition: all 0.5s;
   z-index: 5;
+  &:hover {
+    background-color: $white;
+    border-color: $black;
+    color: $black;
+  }
+  &:active {
+    background-color: #fff;
+  }
+}
+
+.project-content {
+  position: absolute;
+  transition: all 0.5s;
+  height: 100%;
+  width: 100%;
+}
+
+.project-content-inactive {
+  border: 1px solid white;
+  left: -500px;
+  z-index: -1;
+}
+
+.project-content-active {
+  border: 1px solid red;
+  left: 0px;
+}
+
+.project-info {
+}
+
+.project-links {
 }
 
 .projects-btn:nth-of-type(1) {

@@ -52,7 +52,6 @@ class Projects extends Component {
       $('.project')[counter].classList.add('active-project');
       $('.project')[counter + 1].classList.add('not-active-project');
       $('.project')[counter + 1].classList.remove('active-project');
-      console.log($('.project')[counter]);
     }
     if (direction == 'right' && counter < this.state.listLength) {
       counter = counter + 1;
@@ -62,7 +61,6 @@ class Projects extends Component {
       $('.project')[counter - 1].classList.add('not-active-project');
       $('.project')[counter - 1].classList.remove('active-project');
     }
-    console.log($('.project')[counter]);
   }
 
   renderProjects() {

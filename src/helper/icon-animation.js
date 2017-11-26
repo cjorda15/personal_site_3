@@ -9,7 +9,7 @@ $(document).ready(() => {
     var st = $(this).scrollTop();
     if (st > lastScrollTop) {
       if (!(current >= 75)) {
-        current += 0.65;
+        current += 0.85;
         $('.about-1-icons-wrapper').css({ top: `${current}%` });
       } else {
         $('.death-star-not-active')

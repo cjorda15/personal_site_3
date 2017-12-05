@@ -94,7 +94,7 @@ const Skills = () => {
           <div className="skill-card">
             <div
               className="style-icon"
-              style={{ backgroundImage: `url(icons/DATABASE-icon.png)` }}
+              style={{ backgroundImage: `url(icons/database-icon.png)` }}
             />
             <div>DATABASE</div>
           </div>

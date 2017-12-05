@@ -5,34 +5,38 @@ import $ from 'jquery';
 const project = [
   {
     title: 'color your day',
-    summary:
-      'ajsndfkjnaks nakn fkna kjsnfjkansfjkna knfkan sfkjn ajkfnjkansfjknasjkfn jkan fjkna jkfnjk sankn n jakskfjan asdf a sdfa sdf d af df sd ',
     liveLink: `https://color-your-day.herokuapp.com/`,
     codeSrcLink: 'https://github.com/cjorda15/color_your_day',
     img: `project_images/colorMe-min.png`
   },
   {
     title: 'Static Site',
-    summary:
-      'used with gaasdfsdfrrr ajsndfkjnaks nakn fkna kjsnfjkansfjkna knfkan sfkjn ajkfnjkansfjknasjkfn jkan fjkna jkfnjk sankn n jakskfjan',
     liveLink: `https://cjorda15.github.io/cj-comp-challenge-3/`,
     codeSrcLink: 'https://github.com/cjorda15/cj-comp-challenge-3',
     img: `project_images/static-min.png`
   },
   {
     title: 'Space Breakout',
-    summary:
-      'asdlkfnlkasdfmla ajsndfkjnaks nakn fkna kjsnfjkansfjkna knfkan sfkjn ajkfnjkansfjknasjkfn jkan fjkna jkfnjk sankn n jakskfjans jkfnjk',
     liveLink: `"https://evening-harbor-90728.herokuapp.com"`,
     codeSrcLink: 'https://github.com/cjorda15/gametime',
     img: `project_images/space-min.png`
   },
   {
     title: 'CODE SPORT',
-    summary:
-      'used with blah ajsndfkjnaks nakn fkna kjsnfjkansfjkna knfkan sfkjn ajkfnjkansfjknasjkfn jkan fjkna jkfnjk sankn n jakskfjan',
     liveLink: `https://github.com/cjorda15/CodeSport`,
     codeSrcLink: 'https://sleepy-anchorage-74386.herokuapp.com',
+    img: `project_images/codeSport-min.png`
+  },
+  {
+    title: 'Movie Tracker',
+    liveLink: `https://jenn-peavler-movie-tracker.herokuapp.com`,
+    codeSrcLink: 'https://github.com/cjorda15/MovieTime',
+    img: `project_images/codeSport-min.png`
+  },
+  {
+    title: 'New News',
+    liveLink: `https://obscure-headland-42499.herokuapp.com`,
+    codeSrcLink: 'https://github.com/cjorda15/NewNews',
     img: `project_images/codeSport-min.png`
   }
 ];

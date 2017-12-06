@@ -30,6 +30,3 @@ class Project extends Component {
 }
 
 export default Project;
-
-// liveLink: `https://color-your-day.herokuapp.com/`,
-// codeSrcLink

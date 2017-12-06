@@ -96,7 +96,7 @@ const Skills = () => {
               className="style-icon"
               style={{ backgroundImage: `url(icons/database-icon.png)` }}
             />
-            <div>DATABASE</div>
+            <div>MONGO</div>
           </div>
         </div>
       </section>

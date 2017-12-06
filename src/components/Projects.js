@@ -31,13 +31,13 @@ const project = [
     title: 'Movie Tracker',
     liveLink: `https://jenn-peavler-movie-tracker.herokuapp.com`,
     codeSrcLink: 'https://github.com/cjorda15/MovieTime',
-    img: `project_images/codeSport-min.png`
+    img: `project_images/movie_tracker.jpg`
   },
   {
     title: 'New News',
     liveLink: `https://obscure-headland-42499.herokuapp.com`,
     codeSrcLink: 'https://github.com/cjorda15/NewNews',
-    img: `project_images/codeSport-min.png`
+    img: `project_images/new_news.jpg`
   }
 ];
 

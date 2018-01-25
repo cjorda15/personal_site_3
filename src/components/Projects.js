@@ -10,6 +10,12 @@ const project = [
     img: `project_images/colorMe-min.png`
   },
   {
+    title: 'CSS/jQuery Fun',
+    liveLink: `https://chrissss.herokuapp.com`,
+    codeSrcLink: 'https://github.com/cjorda15/cj-comp-challenge-3',
+    img: `project_images/css-min.png`
+  },
+  {
     title: 'Static Site',
     liveLink: `https://cjorda15.github.io/cj-comp-challenge-3/`,
     codeSrcLink: 'https://github.com/cjorda15/cj-comp-challenge-3',

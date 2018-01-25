@@ -7,10 +7,4 @@ require('./styles/index.scss');
 
 const history = createHistory();
 
-render(
-  // <Router history={history}>
-  //   <Route to="/" component={App} />
-  // </Router>,
-  <App />,
-  document.getElementById('root')
-);
+render(<App />, document.getElementById('root'));
